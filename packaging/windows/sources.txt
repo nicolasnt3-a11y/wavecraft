@@ -1,0 +1,5 @@
+# Composants tiers assemblés dans le paquet Windows.
+# Format : <nom> <url> <sha256>
+# Les deux sont libres (GPL) ; voir THIRD_PARTY.md.
+rtl-sdr-blog https://github.com/rtlsdrblog/rtl-sdr-blog/releases/download/V1.4.0/Release.zip 7ef33f1304647f65e5e0fde43637a73d54f076e91e651a3cecc4f55a17fd9815
+zadig https://github.com/pbatard/libwdi/releases/download/v1.5.1/zadig-2.9.exe 4ecaa95df3da3621486a043aef8b3050b8bafe7c901402871e816229ef82039b

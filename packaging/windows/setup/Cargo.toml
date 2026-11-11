@@ -1,0 +1,21 @@
+[package]
+name = "wavecraft-setup"
+version = "0.1.0"
+edition = "2024"
+description = "Installateur Windows pour Wavecraft"
+license = "GPL-3.0-or-later"
+
+[dependencies]
+windows-sys = { version = "0.61.2", features = [
+    "Win32_Foundation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_UI_Shell",
+    "Win32_System_Threading",
+] }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

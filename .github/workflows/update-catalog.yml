@@ -1,0 +1,50 @@
+name: Catalogue
+
+# Le catalogue ne doit jamais vieillir : les stations changent de fréquence et
+# d'horaire, et une fiche périmée fait écouter du vide. Il est donc relevé
+# chaque semaine chez Priyom, et publié s'il a bougé.
+on:
+  schedule:
+    - cron: "17 4 * * 1" # tous les lundis, 4 h 17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  relever:
+    name: Relever le catalogue
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Fiches des stations
+        run: python tools/fetch_stations.py
+
+      # L'outil refuse d'écrire un relevé manifestement incomplet : une panne
+      # chez Priyom ne doit pas effacer un bon catalogue.
+      - name: Créneaux horaires
+        run: python tools/update_catalog.py --days 14 --min-events 400
+
+      - name: Vérifier que le catalogue reste lisible par l'application
+        working-directory: app
+        run: cargo test --no-default-features catalog
+
+      - name: Publier s'il a changé
+        run: |
+          if git diff --quiet -- app/assets/catalog.json app/assets/stations.json; then
+            echo "Rien n'a changé cette semaine."
+            exit 0
+          fi
+          stations=$(python -c "import json;print(len(json.load(open('app/assets/catalog.json'))['stations']))")
+          git config user.name "wavecraft-catalogue"
+          git config user.email "noreply@users.noreply.github.com"
+          git add app/assets/catalog.json app/assets/stations.json
+          git commit -m "Catalogue : relevé hebdomadaire ($stations stations)
+
+          Source : Priyom.org (CC BY-NC-SA 4.0)."
+          git push

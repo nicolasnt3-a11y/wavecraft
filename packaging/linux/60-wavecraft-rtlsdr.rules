@@ -1,0 +1,7 @@
+# Wavecraft — accès à la clé RTL-SDR sans privilège.
+#
+# TAG+="uaccess" donne l'accès à l'utilisateur présent devant la machine ;
+# GROUP="plugdev" avec MODE="0660" sert au service systemd (utilisateur
+# dynamique, groupe plugdev) et aux systèmes sans prise en charge d'uaccess.
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2832", MODE="0660", GROUP="plugdev", TAG+="uaccess", SYMLINK+="rtl_sdr"
+SUBSYSTEM=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="2838", MODE="0660", GROUP="plugdev", TAG+="uaccess", SYMLINK+="rtl_sdr"

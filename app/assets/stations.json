@@ -1,0 +1,2578 @@
+{
+ "source": "https://priyom.org/number-stations",
+ "licence": "Priyom.org, CC BY-NC-SA 4.0",
+ "stations": [
+  {
+   "id": "Baron-78",
+   "name": "Baron78 / Барон78",
+   "family": "russia",
+   "status": "unknown (likely inactive)",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Russia",
+   "frequencies_khz": [
+    3850,
+    4940
+   ],
+   "counterparts": [
+    "The Pip",
+    "Squeaky Wheel",
+    "Vega"
+   ],
+   "summary": "Baron78 (Барон78) is the operating callsign of the central hub of a Russian military commandment network serving the Southern Military District . It operates on 4940 kHz during daytime and 3850 kHz during evening/nighttime making use of transmitter noise as a channel marker. It is a station in the same network as The Pip, The Squeaky Wheel and Vega. On January 15th 2020 the channel marker has been found on alternate day frequency 4881 kHz. On 23rd January 2020 the marker has been observed on two new frequencies of 4950 kHz and 5094 kHz. On 17th July 2020 the marker has been observed on 5025, 5",
+   "url": "https://priyom.org/military-stations/russia/baron-78"
+  },
+  {
+   "id": "Berkut24",
+   "name": "Berkut24 / Беркут24",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male, live",
+   "mode": "J3E (USB)",
+   "location": "Russia",
+   "frequencies_khz": [
+    3870,
+    5210
+   ],
+   "counterparts": [],
+   "summary": "This network was first heard in 2009, the first signal was caught in 2013. Not much known about this station, but presumably it's located somewhere in Southern Military District.",
+   "url": "https://priyom.org/military-stations/russia/berkut24"
+  },
+  {
+   "id": "D marker",
+   "name": "D-Marker, Fazan37 / Фазан37",
+   "family": "russia",
+   "status": "inactive",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "near Saint Petersburg, Russia",
+   "frequencies_khz": [
+    5292
+   ],
+   "counterparts": [],
+   "summary": "\"D-Marker\" is a Russian military commandment network serving the Western Military District . It broadcasts on 5292 kHz around the clock.",
+   "url": "https://priyom.org/military-stations/russia/d-marker"
+  },
+  {
+   "id": "E01",
+   "name": "Ready, Ready",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M17"
+   ],
+   "summary": "E01 was a European number station of unconfirmed origin. Last reported in late 1999. [1]",
+   "url": "https://priyom.org/number-stations/english/e01"
+  },
+  {
+   "id": "E03",
+   "name": "Lincolnshire Poacher",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "Europe (UK or Cyprus)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E03a"
+   ],
+   "summary": "E03 was a British number station. Last reported in July 2008. [1]",
+   "url": "https://priyom.org/number-stations/english/e03"
+  },
+  {
+   "id": "E03a",
+   "name": "Cherry Ripe",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "Asia-Pacific (Guam or Australia)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E03"
+   ],
+   "summary": "E03a was a British number station. Last reported in December 2009. [1]",
+   "url": "https://priyom.org/number-stations/english/e03a"
+  },
+  {
+   "id": "E05",
+   "name": "The Counting Station/Cynthia",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB, USB + carrier",
+   "location": "Warrenton, VA, USA; Frankfurt, Germany; others",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G05",
+    "V05"
+   ],
+   "summary": "E05 was an American number station. Last reported in October 2003. [1]",
+   "url": "https://priyom.org/number-stations/english/e05"
+  },
+  {
+   "id": "E06",
+   "name": "English Man",
+   "family": "english",
+   "status": "active",
+   "voice": "Male",
+   "mode": "USB + carrier",
+   "location": "Moscow, Russia; Orenburg, Russia; Smolensk, Russia; Chita, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E17",
+    "G06",
+    "S06",
+    "V06",
+    "V23",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "E06 schedules consist of 2 identical transmissions 1 hour apart. The latter transmission is 1-3 MHz lower or higher in frequency. In case traffic was sent, the two transmissions are usually also made the next day, at the same times and frequencies. In case of interference on the planned frequency, E06 may broadcast up to 20 kHz away instead.",
+   "url": "https://priyom.org/number-stations/english/e06"
+  },
+  {
+   "id": "E07",
+   "name": "English Man",
+   "family": "english",
+   "status": "active",
+   "voice": "Male",
+   "mode": "USB",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G07",
+    "S07",
+    "V07",
+    "M12",
+    "XP",
+    "XPH",
+    "XPA",
+    "XPA2",
+    "XPB"
+   ],
+   "summary": "In case of an unexpected interruption during the transmission, the station restarts with the intro, repeated for one minute, followed by the current message continued from some groups before the failure; the preamble is omitted.",
+   "url": "https://priyom.org/number-stations/english/e07"
+  },
+  {
+   "id": "E07a",
+   "name": "English Man",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Male",
+   "mode": "USB",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "E07a is a variant of E07 that adds a 5-digit group to the transmission intro. It affects only the traffic format, while the null format is unchanged. It was retired from regular activity when its two known schedules both went inactive together at the end of January 2022.",
+   "url": "https://priyom.org/number-stations/english/e07a"
+  },
+  {
+   "id": "E09",
+   "name": "Magnetic Fields",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "AM",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V08"
+   ],
+   "summary": "E09 was a number station believed to have originated from a North African country. Last reported in July 1997. [1]",
+   "url": "https://priyom.org/number-stations/english/e09"
+  },
+  {
+   "id": "E10",
+   "name": "NATO Alphabet",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB + carrier",
+   "location": "Israel",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "E10 was an Israeli number station. Last reported in March 2011.",
+   "url": "https://priyom.org/number-stations/english/e10"
+  },
+  {
+   "id": "E11",
+   "name": "Oblique",
+   "family": "english",
+   "status": "active",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "52°25'46\"N 20°52'53\"E (Warsaw, Poland)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G11",
+    "S11",
+    "S11a",
+    "M03",
+    "F03",
+    "F11",
+    "P03"
+   ],
+   "summary": "The pronunciations used by E11, as written in the International Phonetic Alphabet , are as follows:",
+   "url": "https://priyom.org/number-stations/english/e11"
+  },
+  {
+   "id": "E12",
+   "name": "NNN",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Austria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G12",
+    "V12",
+    "V18",
+    "M02"
+   ],
+   "summary": "E12 was an Austrian number station. Last reported in November 1997. [1]",
+   "url": "https://priyom.org/number-stations/english/e12"
+  },
+  {
+   "id": "E13",
+   "name": "Five Dashes",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "Germany",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G13"
+   ],
+   "summary": "E13 was a German-based number station. Active from March 1991 to early 1993. [1] [2]",
+   "url": "https://priyom.org/number-stations/english/e13"
+  },
+  {
+   "id": "E14",
+   "name": "Counting \"Control\"",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB, USB + carrier",
+   "location": "USA",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V14"
+   ],
+   "summary": "E14 was an American number station. Last reported in early 1996. [1]",
+   "url": "https://priyom.org/number-stations/english/e14"
+  },
+  {
+   "id": "E15",
+   "name": "Nancy Adam Susan",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Male and female, live",
+   "mode": "AM, USB",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "E15 was a number station believed to have originated from Egypt. Last reported in May 2006. [1]",
+   "url": "https://priyom.org/number-stations/english/e15"
+  },
+  {
+   "id": "E16",
+   "name": "Two Letter",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "(West) Germany",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G16"
+   ],
+   "summary": "E16 was a (West) German number station. Last reported in June 1999. [1]",
+   "url": "https://priyom.org/number-stations/english/e16"
+  },
+  {
+   "id": "E17",
+   "name": "English Lady",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "G06",
+    "S06",
+    "V06",
+    "V23",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "E17  was an English language mode of the Russian 6 operator. Ceased in 2001.",
+   "url": "https://priyom.org/number-stations/english/e17"
+  },
+  {
+   "id": "E17z",
+   "name": "English Lady 0 0 0 0 0",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB + carrier, AM",
+   "location": "Rivne, Ukraine",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S06s"
+   ],
+   "summary": "E17z is the English language mode of the Ukrainian sz  operator. It has brutally ceased operations since the night of February 24, 2022, when the large-scale military invasion of Ukraine by Russia began.",
+   "url": "https://priyom.org/number-stations/english/e17z"
+  },
+  {
+   "id": "E18",
+   "name": "Fife Free",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "LSB",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G22",
+    "S04",
+    "M13"
+   ],
+   "summary": "E18 was a Bulgarian number station. Last reported in December 2002. [1]",
+   "url": "https://priyom.org/number-stations/english/e18"
+  },
+  {
+   "id": "E21",
+   "name": "4F Counting",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Male, increased in pitch and tempo, with American accent",
+   "mode": "",
+   "location": "USA",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E05",
+    "G05",
+    "V05"
+   ],
+   "summary": "First noted around 1981, ceased in March 1995. Used the old format of E05 , which involved 4-figure groups.",
+   "url": "https://priyom.org/number-stations/english/e21"
+  },
+  {
+   "id": "E23",
+   "name": "",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Female (same as E05)",
+   "mode": "USB",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M04"
+   ],
+   "summary": "E23 was a Polish number station. Last reported in January 2007. [1]",
+   "url": "https://priyom.org/number-stations/english/e23"
+  },
+  {
+   "id": "E25",
+   "name": "Rebeat",
+   "family": "english",
+   "status": "hibernated",
+   "voice": "Female automated and Live Male, with Arabic accent, the last digit in the groups is inflected",
+   "mode": "AM, USB, USB + carrier",
+   "location": "Egypt",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "Status: under investigation , please report any activity. Monitors in the Eastern Mediterranean area are encouraged to search for activity on 6140khz from 0700z-1200z.",
+   "url": "https://priyom.org/number-stations/english/e25"
+  },
+  {
+   "id": "E25a",
+   "name": "Rebeat",
+   "family": "english",
+   "status": "hibernated",
+   "voice": "Female automated and Live Male, with Arabic accent, the last digit in the groups is inflected",
+   "mode": "AM, USB, USB + carrier",
+   "location": "Egypt",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E25"
+   ],
+   "summary": "E25a is a variant of E25 where the 3-digit ID is followed by 1 or 2 digits instead of a full 4-digit group message.",
+   "url": "https://priyom.org/number-stations/english/e25a"
+  },
+  {
+   "id": "E25b",
+   "name": "",
+   "family": "english",
+   "status": "inactive",
+   "voice": "Male live",
+   "mode": "AM, USB, USB + carrier",
+   "location": "Egypt",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "E25b was a variant of E25 that sent messages in Arabic, while still sending the preamble in English. Only known ID's were 835 and 837. Ceased when E25 switched to pre-recorded female voice in 2007.",
+   "url": "https://priyom.org/number-stations/english/e25b"
+  },
+  {
+   "id": "F01",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "FSK, 200 Bd, 500 Hz, 5N1.5",
+   "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "G06",
+    "S06",
+    "V06",
+    "V23",
+    "M14",
+    "F06"
+   ],
+   "summary": "F01 is a digital mode of the Russian 6 operator. It utilizes a custom FSK system compatible with ITA2 RTTY.",
+   "url": "https://priyom.org/number-stations/digital/f01"
+  },
+  {
+   "id": "F06",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "FSK, 200 Bd, 1000 Hz, ACF=288",
+   "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "G06",
+    "S06",
+    "V06",
+    "V23",
+    "M14",
+    "F01"
+   ],
+   "summary": "F06 is a digital mode of the Russian 6 operator. It utilizes a custom FSK system.",
+   "url": "https://priyom.org/number-stations/digital/f06"
+  },
+  {
+   "id": "F06a",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "FSK, 200 Bd, 1000 Hz, ACF=288",
+   "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "F06a is a variant of the Russian 6 mode F06 . Unlike regular F06, which carries a compressed stream of 5-digit groups, F06a carries a named file.",
+   "url": "https://priyom.org/number-stations/digital/f06a"
+  },
+  {
+   "id": "F07",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "USB; 5 x 16-tone MFSK, 10 Bd, 20 Hz + BPSK, 250 Bd",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "F07 is a digital mode of the Russian 7 operator. It features a custom waveform based around main data sections using 5 parallel channels of 16-tone MFSK, and incorporating other FSK synchronization and PSK header and framing elements. F07 is believed to be one waveform of a custom proprietary digital system, also supporting its P07 OFDM-based counterpart, and several other experimental modes .",
+   "url": "https://priyom.org/number-stations/digital/f07"
+  },
+  {
+   "id": "F11",
+   "name": "",
+   "family": "digital",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "USB; FSK, 100 Bd, 620 Hz, ACF=16",
+   "location": "Warsaw, Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11",
+    "G11",
+    "S11",
+    "S11a",
+    "M03",
+    "F03",
+    "P03"
+   ],
+   "summary": "F11 was a digital flavor of the Polish 11 operator. It ceased in December 2018, having been succeeded by F03 and P03 .",
+   "url": "https://priyom.org/number-stations/digital/f11"
+  },
+  {
+   "id": "FGKT",
+   "name": "FGKT / ФГКТ",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male, live",
+   "mode": "J3E (USB)",
+   "location": "Presumably Naro-Fominsk, Russia",
+   "frequencies_khz": [
+    5400,
+    6970
+   ],
+   "counterparts": [],
+   "summary": "\"FGKT\" / \"ФГКТ\"  is a Russian military commandment network serving the Moscow Military District. It broadcasts around the clock on 6970 kHz.",
+   "url": "https://priyom.org/military-stations/russia/fgkt"
+  },
+  {
+   "id": "G01",
+   "name": "Tyrolean Music Station",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Male",
+   "mode": "AM",
+   "location": "Chartres, France",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G01 , also known as the Tyrolean Music Station , was operated by the French external intelligence agency SDECE [3] [4] [5] - Service de Documentation Extérieure et de Contre-Espionnage (External Documentation and Counter-Espionage Service), the predecessor of the DGSE . Transmissions ceased in 1975, in the few following days after the French anti-establishment magazine Interférences published the information that the station was operated by the SDECE from the area of Chartres, in France [3] . It was quite a unique station: rather than simply broadcasting groups of numbers, it also occasionally",
+   "url": "https://priyom.org/number-stations/german/g01"
+  },
+  {
+   "id": "G02",
+   "name": "Swedish Rhapsody",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, often mistaken for a child's voice",
+   "mode": "AM, DSB",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M04"
+   ],
+   "summary": "G02 was first run by the Polish State Security [1] (SB), then by the Office for State Protection (UOP). Last heard on 9 April 1998.",
+   "url": "https://priyom.org/number-stations/german/g02"
+  },
+  {
+   "id": "G03",
+   "name": "Gongs or Chimes",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "German Democratic Republic (East Germany)",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G03 was operated by East German National People's Army (NVA). Last heard in May 1990, shortly before the German unification. G03 was transmitted from Zeesen, and remotely controlled from Wernsdorf. [source]",
+   "url": "https://priyom.org/number-stations/german/g03"
+  },
+  {
+   "id": "G04",
+   "name": "Three Note Oddity",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated (the same as G03)",
+   "mode": "AM",
+   "location": "Hungary",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G04 is generally believed to have been operated by Hungarian intelligence and transmitted from Budapest area, ceased in 2005.",
+   "url": "https://priyom.org/number-stations/german/g04"
+  },
+  {
+   "id": "G05",
+   "name": "The Counting Station",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB, USB + carrier",
+   "location": "Many",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E05",
+    "V05"
+   ],
+   "summary": "The voice used standard German military radio pronuncation of \"2\", being rendered as \"zwo\". The variant G05a , however, used the usual \"zwei\" instead.",
+   "url": "https://priyom.org/number-stations/german/g05"
+  },
+  {
+   "id": "G05a",
+   "name": "The Counting Station",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB, USB + carrier",
+   "location": "Many",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "Variant of G05 that used the word \"zwei\" for 2 instead of \"zwo\". The transmission format was otherwise identical.",
+   "url": "https://priyom.org/number-stations/german/g05a"
+  },
+  {
+   "id": "G06",
+   "name": "German Lady",
+   "family": "german",
+   "status": "hibernated",
+   "voice": "Female",
+   "mode": "USB + carrier",
+   "location": "Smolensk, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "S06",
+    "V06",
+    "V23",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "G06 is the German language mode of the Russian 6 operator. Most of its schedules were retired at the end of 2019 , before being fully retired from regular operation in March 2021 .",
+   "url": "https://priyom.org/number-stations/german/g06"
+  },
+  {
+   "id": "G07",
+   "name": "German Lady 000 000",
+   "family": "german",
+   "status": "hibernated",
+   "voice": "Female (same as G06 and G08)",
+   "mode": "AM",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "S07",
+    "V07",
+    "M12",
+    "XP"
+   ],
+   "summary": "G07 was the German language mode of the Russian 7 operator. Retired in January 2001.",
+   "url": "https://priyom.org/number-stations/german/g07"
+  },
+  {
+   "id": "G08",
+   "name": "Four Note Rising Scale",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated (the same as G06 and G07)",
+   "mode": "AM",
+   "location": "German Democratic Republic (East Germany)",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G08 was operated by East German Ministry for State Security (Stasi). Last heard in May 1990, shortly before the German unification. G08 was transmitted from Zeesen, and remotelly controlled from Wernsdorf. [source]",
+   "url": "https://priyom.org/number-stations/german/g08"
+  },
+  {
+   "id": "G08a",
+   "name": "",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "German Democratic Republic (East Germany)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M49"
+   ],
+   "summary": "The Morse letter \"A\" repeated many times, then a single 5-figure group repeated for a minute, then the sequence repeats with another 5-figure group. Was very uncommon, heard once in a few months, and operated on 6571 and 7928 kHz between 7:00 and 13:00 UTC in USB mode.",
+   "url": "https://priyom.org/number-stations/german/g08a"
+  },
+  {
+   "id": "G08b",
+   "name": "Rapid Dots",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "German Democratic Republic (East Germany)",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "In this variant, the intro was a series of rapid beeps, rather than a 4-note rising scale. The transmissions then continued as in regular G08 .",
+   "url": "https://priyom.org/number-stations/german/g08b"
+  },
+  {
+   "id": "G09",
+   "name": "Saxophone Piece",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "This station was only ever heard once - one day during the Cold War at 19:00. It hasn't turned up ever since. No recordings exist.",
+   "url": "https://priyom.org/number-stations/german/g09"
+  },
+  {
+   "id": "G10",
+   "name": "Bert Kaempfert",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "AM",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G10 was operated by one of Polish intelligence agencies. Ceased in late 1970s, replaced by G11 .",
+   "url": "https://priyom.org/number-stations/german/g10"
+  },
+  {
+   "id": "G11",
+   "name": "Strich",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "Warsaw, Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11",
+    "S11",
+    "S11a",
+    "M03",
+    "F11",
+    "F03",
+    "P03"
+   ],
+   "summary": "G11 was the German language mode of the Polish 11 operator. Its most recent revival was during 2007-2014.",
+   "url": "https://priyom.org/number-stations/german/g11"
+  },
+  {
+   "id": "G12",
+   "name": "NNN",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Austria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E12",
+    "V12",
+    "V18",
+    "M02"
+   ],
+   "summary": "This station has used a few different voices, including Austrian German ones.",
+   "url": "https://priyom.org/number-stations/german/g12"
+  },
+  {
+   "id": "G13",
+   "name": "Five Dashes",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, variable speed",
+   "mode": "AM",
+   "location": "West Germany",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E13"
+   ],
+   "summary": "E13 and G13 were short-lived number stations that operated at the end of the Cold War. They were used by American and West German intelligence agencies CIA and BND during destabilization operations in East Germany.",
+   "url": "https://priyom.org/number-stations/german/g13"
+  },
+  {
+   "id": "G14",
+   "name": "DFC37/DFD21",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, the last digit in the groups was inflected (the same as G15 and G16)",
+   "mode": "AM, USB",
+   "location": "West Germany",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G14 was operated by (West) German Federal Intelligence Service (BND), ceased in early 1990s, operated since late 1950s. The callsigns DFC37 and DFD21, and their frequencies of 3370 and 4010 kHz were both ITU-allocated, making them one of very few legitimately operating number stations.",
+   "url": "https://priyom.org/number-stations/german/g14"
+  },
+  {
+   "id": "G14a",
+   "name": "DFC37/DFD21",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "AM, USB",
+   "location": "West Germany",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The designator G14a refers to the old format of DFC37/DFD21 transmissions, which didn't involve an automated voice. Ceased in 1988.",
+   "url": "https://priyom.org/number-stations/german/g14a.aspx"
+  },
+  {
+   "id": "G15",
+   "name": "Papa November",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, the last digit in the groups was inflected (the same as G14 and G16)",
+   "mode": "AM, USB",
+   "location": "West Germany",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G15 was a part of BND's extensive number station network. This one always transmitted on four frequencies simultaneously - 2707, 5015, 7404, 11108 kHz - eight times a day, every single day of the year, at 00:00, 00:30, 06:00, 06:30, 12:00, 12:30, 18:00 and 18:30 UTC. The :00 transmissions were the primary sendings done in AM mode, and the :30's - repeats done in USB mode.",
+   "url": "https://priyom.org/number-stations/german/g15"
+  },
+  {
+   "id": "G15a",
+   "name": "Papa November",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "AM, USB",
+   "location": "West Germany",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The designator G15a refers to the old format of G15 transmissions, where \"Papa November\" in the intro was read over a random electronic melody, rather than the two alternating.",
+   "url": "https://priyom.org/number-stations/german/g15a"
+  },
+  {
+   "id": "G16",
+   "name": "Two Letter",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, last digit in the groups was inflected (the same as G14 and G15)",
+   "mode": "USB, AM",
+   "location": "Germany",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G16 was operated by (West) German Federal Intelligence Service (BND). Last heard in 1999.",
+   "url": "https://priyom.org/number-stations/german/g16"
+  },
+  {
+   "id": "G18",
+   "name": "Eight Note Rising Scale",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "G18 was presumably operated by Czechoslovak intelligence, guessing by similarities of the format with S10 . Ceased around 1973. Only one recording is known to exist, made by Simon Mason, which is included on The Conet Project .",
+   "url": "https://priyom.org/number-stations/german/g18"
+  },
+  {
+   "id": "G20",
+   "name": "Spruch",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Male and female, live, with foreign accent",
+   "mode": "A3E",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The operating agency behind G20 is uncertain. Characteristic element of this station was usage of different pieces of music as the introductions.",
+   "url": "https://priyom.org/number-stations/german/g20"
+  },
+  {
+   "id": "G20a",
+   "name": "Spruch",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Male and female, pre-recorded",
+   "mode": "AM",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The operating agency behind G20a is uncertain. G20a was a variant of G20 where a single group message without a header was transmitted.",
+   "url": "https://priyom.org/number-stations/german/g20a"
+  },
+  {
+   "id": "G22",
+   "name": "Edna Sednitzer",
+   "family": "german",
+   "status": "inactive",
+   "voice": "Female, automated, severely distorted",
+   "mode": "LSB",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E18",
+    "S04",
+    "M13"
+   ],
+   "summary": "G22 belonged to one of Bulgarian intelligence agencies. Last heard in early 2006 [1] .",
+   "url": "https://priyom.org/number-stations/german/g22"
+  },
+  {
+   "id": "HM01",
+   "name": "",
+   "family": "digital",
+   "status": "hibernated",
+   "voice": "Female (Spanish)",
+   "mode": "AM; OFDM",
+   "location": "Bejucal, Cuba (22°52'11.7\"N 82°19'50.7\"W) (unconfirmed)",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The messages transmitted by HM01 are computer files with 8-digit names and either .TXT, .F1C, or .F1G as the file extension. The files consist of unidentified binary data. The 5-digit headers consist of the last 4 digits of the file name, followed by a single digit age counter.",
+   "url": "https://priyom.org/number-stations/digital/hm01"
+  },
+  {
+   "id": "Katok-65",
+   "name": "Katok-65 (recipient callsign)",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Russia",
+   "frequencies_khz": [
+    4224
+   ],
+   "counterparts": [
+    "S28"
+   ],
+   "summary": "According to our information, this command network is for 6th joined army of Western military district. It is very active during trainings. Katok-65 is the recipient callsign of messages sent on this network; it wouldn't indicate the name of the station itself sending on it. Messages addressed to Katok-65 rarely appear on the main district network channel, The Buzzer .",
+   "url": "https://priyom.org/military-stations/russia/katok-65"
+  },
+  {
+   "id": "M01",
+   "name": "",
+   "family": "morse",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "CW",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "There frequently are minor variations to the above format, such as \"BT BT BT BT\" instead of \"BT BT\", and no BT's at all.",
+   "url": "https://priyom.org/number-stations/morse/m01"
+  },
+  {
+   "id": "M01a",
+   "name": "",
+   "family": "morse",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "CW",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M01a is a random, unscheduled variant of M01 , formerly used on the last week of each month on M01 schedules (until 2002).",
+   "url": "https://priyom.org/number-stations/morse/m01a"
+  },
+  {
+   "id": "M01b",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "USB + carrier",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M01b was a Russian number station. Last heard on May 29, 2020.",
+   "url": "https://priyom.org/number-stations/morse/m01b"
+  },
+  {
+   "id": "M02",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW, MCW",
+   "location": "Austria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E12",
+    "G12",
+    "V12",
+    "V18"
+   ],
+   "summary": "M02 was ran by Austrian Army Intelligence Office (HNA). Morse code counterpart to E12 , G12 , V12 and V18 . Last heard on 30 October 1997.",
+   "url": "https://priyom.org/number-stations/morse/m02"
+  },
+  {
+   "id": "M03",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "CW",
+   "location": "Warsaw, Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11",
+    "G11",
+    "S11",
+    "S11a",
+    "F03",
+    "F11",
+    "P03"
+   ],
+   "summary": "M03 was the Morse code mode of the Polish 11 operator. Retired in February 2016.",
+   "url": "https://priyom.org/number-stations/morse/m03"
+  },
+  {
+   "id": "M03a",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11c"
+   ],
+   "summary": "M03a was a variant of M03 that would occasionally replace it on its schedules. It was an alternative null message format, that included an additional, middle 3-figure segment in the ID (either \"111\" or \"333\").",
+   "url": "https://priyom.org/number-stations/morse/m03a"
+  },
+  {
+   "id": "M03b",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M03b refers to M03 messages that were repeated annually, on the exact same frequency, time and day, sometimes for multiple years in a row [1] . The messages were always 50 to 59 groups long [2] .",
+   "url": "https://priyom.org/number-stations/morse/m03b"
+  },
+  {
+   "id": "M03c",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11b",
+    "S11b"
+   ],
+   "summary": "M03c refers to M03 messages that began and ended with the groups \"77777 77777\", which were included in the amount of groups given in the preamble. First heard in August 2000 [1] , last heard on 4 December 2008 [2] .",
+   "url": "https://priyom.org/number-stations/morse/m03c"
+  },
+  {
+   "id": "M03d",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M03d simply refers to M03 messages that are longer than 60 groups.",
+   "url": "https://priyom.org/number-stations/morse/m03d"
+  },
+  {
+   "id": "M03e",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M03e referred to M03 messages, where there was the letter \"R\" between each group, and the letters \"RR\" every 10 groups. Only noted on the turn of 2003 and 2004 [1] [2] , not heard ever since.",
+   "url": "https://priyom.org/number-stations/morse/m03e"
+  },
+  {
+   "id": "M03f",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M03f referred to M03 messages, which started and ended with a quintuple-digit-group (e.g. \"33333\"), but after the message groups there was the amount of groups in the message padded out with zeroes, repeated twice, which was  not included  in the amount of groups provided in the preamble. In practice, however, this variant was only noted on one message, with ID \"886/71\", sent throughout late August and early September in 2007. [1] [2]",
+   "url": "https://priyom.org/number-stations/morse/m03f"
+  },
+  {
+   "id": "M04",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G02",
+    "E23"
+   ],
+   "summary": "M04 was most recently operated by the Polish Office for State Protection (UOP). It was a Morse code counterpart to G02 , and later E23 . Last heard on 14 September 2000. [1]",
+   "url": "https://priyom.org/number-stations/morse/m04"
+  },
+  {
+   "id": "M05",
+   "name": "The Two-Day Wonder",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "?",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M05 was a station that was only heard for two days - on October 5th and 6th, 1993 - possibly linked to the Moscow coup attempt. Very strong signal strengths reported by British monitors suggest the UK as the country of origin.",
+   "url": "https://priyom.org/number-stations/morse/m05"
+  },
+  {
+   "id": "M06",
+   "name": "OLX",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S05b"
+   ],
+   "summary": "M06 was run by the Czech Office for Foreign Relations and Information (ÚZSI) under an ITU-registered callsign OLX. Morse code counterpart to S05b . Last heard on 2 August 1997.",
+   "url": "https://priyom.org/number-stations/morse/m06"
+  },
+  {
+   "id": "M06a",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S05a"
+   ],
+   "summary": "M06a was ran by Czechoslovak State Security (StB) under an ITU-registered callsign OLX. Morse code counterpart to S05a . Replaced by M06 .",
+   "url": "https://priyom.org/number-stations/morse/m06a"
+  },
+  {
+   "id": "M07",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M07 was run by the Czech military intelligence.   Last heard on 8 November 2001. [1]",
+   "url": "https://priyom.org/number-stations/morse/m07"
+  },
+  {
+   "id": "M08",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW, MCW",
+   "location": "Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V02"
+   ],
+   "summary": "M08 is the former Morse code flavor of the Cuban DGI . Replaced by M08a in 1997.",
+   "url": "https://priyom.org/number-stations/morse/m08"
+  },
+  {
+   "id": "M08a",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "LSB; 1000 Hz audio tone",
+   "location": "Havana, Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V02a"
+   ],
+   "summary": "M08a was the Morse code flavor of the Cuban DGI . Superseded by HM01 .",
+   "url": "https://priyom.org/number-stations/morse/m08a"
+  },
+  {
+   "id": "M10",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S10d"
+   ],
+   "summary": "M10 was run by the Czech Military Intelligence (Czech: Vojenské zpravodajství). Morse code counterpart to S10d . Active since mid 1970s (multiple formats) until 20 June 2007.",
+   "url": "https://priyom.org/number-stations/morse/m10"
+  },
+  {
+   "id": "M10c",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S10b"
+   ],
+   "summary": "M10c was an earlier format of M10 , with the only difference being the recipient ID's being 5-figure groups, rather than 3-figure. Morse code counterpart to S10b .",
+   "url": "https://priyom.org/number-stations/morse/m10c"
+  },
+  {
+   "id": "M11",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S10e"
+   ],
+   "summary": "Morse code counterpart to S10e . Last heard on 12 June 2007. [1]",
+   "url": "https://priyom.org/number-stations/morse/m11"
+  },
+  {
+   "id": "M12",
+   "name": "",
+   "family": "morse",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "CW",
+   "location": "Moscow, Russia; Khabarovsk, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "V07",
+    "XP",
+    "XPA",
+    "XPA2",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "The intro and the outro are slower than the rest of the transmission. Zero is sent as \"T\" - a single dash.",
+   "url": "https://priyom.org/number-stations/morse/m12"
+  },
+  {
+   "id": "M13",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E18",
+    "G22",
+    "S04"
+   ],
+   "summary": "M13 belonged to one of Bulgarian intelligence agencies. Morse code counterpart to E18 , G22 , S04 . Last heard in early 2006. [1]",
+   "url": "https://priyom.org/number-stations/morse/m13"
+  },
+  {
+   "id": "M13a",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M13a was a variant of M13 , where the intro was ID ID ID 000 , rather than just the ID.The format was otherwise identical.",
+   "url": "https://priyom.org/number-stations/morse/m13a"
+  },
+  {
+   "id": "M13b",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M13b was a variant of M13 with messages that were up to 70 groups long, longer than the average. However, if a message 23 groups or shorter was to be transmitted, the M13a format was used instead. The format was otherwise identical to M13.",
+   "url": "https://priyom.org/number-stations/morse/m13b"
+  },
+  {
+   "id": "M13c",
+   "name": "",
+   "family": "morse",
+   "status": "n/a",
+   "voice": "Inactive",
+   "mode": "MCW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M13c was an M13 schedule sent in MCW mode, format identical to M13.",
+   "url": "https://priyom.org/number-stations/morse/m13c"
+  },
+  {
+   "id": "M13d",
+   "name": "",
+   "family": "morse",
+   "status": "n/a",
+   "voice": "Inactive",
+   "mode": "ICW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M13d was a schedule of M13 with first and last two groups identical. This schedule was active at 02:30 UTC, with frequent extremely long messages.",
+   "url": "https://priyom.org/number-stations/morse/m13d"
+  },
+  {
+   "id": "M13e",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M13e was a schedule of M13 with three different transmissions of the same message at 06:00, 16:00 and 18:00 UTC. The schedule was daily. The format was identical to M13.",
+   "url": "https://priyom.org/number-stations/morse/m13e"
+  },
+  {
+   "id": "M14",
+   "name": "",
+   "family": "morse",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "CW, USB + carrier",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "G06",
+    "S06",
+    "V06",
+    "V23",
+    "F06",
+    "F01"
+   ],
+   "summary": "The transmission may be made at one of several different speeds. Zero is sent as \"T\" - a single dash.",
+   "url": "https://priyom.org/number-stations/morse/m14"
+  },
+  {
+   "id": "M17",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E01"
+   ],
+   "summary": "M17 was the Morse code counterpart to E01 . Last heard in March 2000.",
+   "url": "https://priyom.org/number-stations/morse/m17"
+  },
+  {
+   "id": "M23",
+   "name": "",
+   "family": "morse",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "CW",
+   "location": "France",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M23 is a Morse code station of uncertain origin and purpose. Despite being assigned an ENIGMA designator, it is not a typical number station . Direction finding attempts put the transmitter location in France, possibly near Paris.",
+   "url": "https://priyom.org/number-stations/morse/m23"
+  },
+  {
+   "id": "M29",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Hungary?",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G04"
+   ],
+   "summary": "M29 is generally believed to have been operated by Hungarian intelligence and transmitted from Budapest area. Morse code counterpart to G04 . Last heard in 2003.",
+   "url": "https://priyom.org/number-stations/morse/m29"
+  },
+  {
+   "id": "M29a",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Hungary?",
+   "frequencies_khz": [],
+   "counterparts": [
+    "G04"
+   ],
+   "summary": "M29 is generally believed to have been operated by Hungarian intelligence and transmitted from Budapest area. Morse code counterpart to G04 . Last heard in 2003.",
+   "url": "https://priyom.org/number-stations/morse/m29a"
+  },
+  {
+   "id": "M39",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M39 was run by the Czech military intelligence. It used the same frequencies as M10 . However, it didn't transmit conventional 5-figure group messages.",
+   "url": "https://priyom.org/number-stations/morse/m39"
+  },
+  {
+   "id": "M40",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "North Korea",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "M40 was transmitted from North Korea. Very frequent transmissions while it was active. Regular transmissions ceased in October 2003.",
+   "url": "https://priyom.org/number-stations/morse/m40"
+  },
+  {
+   "id": "M45",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW (H2A)",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "S21"
+   ],
+   "summary": "M45 is believed to have been a training station. The same format as M01 was used, but semi-automatically sent at the speed of about 12 words per minute. Last heard in October 2013.",
+   "url": "https://priyom.org/number-stations/morse/m45"
+  },
+  {
+   "id": "M94",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "MCW",
+   "location": "South Korea",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V24"
+   ],
+   "summary": "M94 was the Morse counterpart to V24 . Last heard in November 2013.",
+   "url": "https://priyom.org/number-stations/morse/m94"
+  },
+  {
+   "id": "M97",
+   "name": "",
+   "family": "morse",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "ICW",
+   "location": "Vietnam",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V30"
+   ],
+   "summary": "M97 was transmitted from Vietnam. Morse code counterpart to V30 . Last heard in May 6, 2016.",
+   "url": "https://priyom.org/number-stations/morse/m97"
+  },
+  {
+   "id": "Overload",
+   "name": "Overload",
+   "family": "belarus",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "LSB",
+   "location": "Republic of Belarus",
+   "frequencies_khz": [
+    4420
+   ],
+   "counterparts": [
+    "Vyezha"
+   ],
+   "summary": "First heard in 2022, this station serves the Republic of Belarus and operates without a channel marker on 4050kHz LSB all year round. It relays messages sent on the Vyezha channel. Voice broadcasts are usually preceeded by one or more counts. Apart from Monolit transmissions, this station also does two-way reception checks in voice, with stations answering calls on 3822kHz LSB, 4099kHz LSB or 4113.5khz LSB. It is also the only station in this network, which transmits radiograms and messages of three letter groups starting with Z via the voice channel. Recipients of radiograms are then usually ",
+   "url": "https://priyom.org/military-stations/belarus/overload"
+  },
+  {
+   "id": "P07",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "USB; 8-tone OFDM, QSPK, 62.5 Bd, 125 Hz + BPSK, 250 Bd",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "P07 is a digital mode of the Russian 7 operator. It features a custom waveform based around main OFDM data sections, and incorporating FSK synchronization and PSK header and framing elements. P07 is believed to be one waveform of a custom proprietary digital system, also supporting its F07 MFSK-based counterpart, and several other experimental modes .",
+   "url": "https://priyom.org/number-stations/digital/p07"
+  },
+  {
+   "id": "S02",
+   "name": "Drums and Trumpets",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S02 was operated by Bulgarian intelligence, last heard in 1996. The language was Bulgarian.",
+   "url": "https://priyom.org/number-stations/slavic/s02"
+  },
+  {
+   "id": "S02a",
+   "name": "Drums and Trumpets",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The designator S02a refers to S02 with the first few bars of \"Il Silenzio\" played right before the transmission, rather than an hour before. The transmission format was otherwise identical.",
+   "url": "https://priyom.org/number-stations/slavic/s02a"
+  },
+  {
+   "id": "S02c",
+   "name": "Drums and Trumpets",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The designator S02c refers to S02 , where the \"Nomer\" part is a 3-figure group, rather than 2-figure, and where \"Nomer\" and \"Grupi\" parts are swapped at the beginning.",
+   "url": "https://priyom.org/number-stations/slavic/s02c"
+  },
+  {
+   "id": "S02d",
+   "name": "Drums and Trumpets",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The designator S02d refers to S02 , where the \"Nomer\" part is a 5-figure group, rather than 2-figure.",
+   "url": "https://priyom.org/number-stations/slavic/s02d"
+  },
+  {
+   "id": "S03",
+   "name": "Okno",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "",
+   "location": "Czech Republic",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "Note: The S03 listing in ENIGMA 2000's Control list is different than Conet Project's \"Okno\" message we describe here. We have no information about the format described there.",
+   "url": "https://priyom.org/number-stations/slavic/s03"
+  },
+  {
+   "id": "S04",
+   "name": "Edna Sednitzer",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "LSB",
+   "location": "Bulgaria",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E18",
+    "G22",
+    "M13"
+   ],
+   "summary": "S04 belonged to one of Bulgarian intelligence agencies. The language was Bulgarian. Last heard in 2006. [1]",
+   "url": "https://priyom.org/number-stations/slavic/s04"
+  },
+  {
+   "id": "S05",
+   "name": "OLX",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [
+    22910
+   ],
+   "counterparts": [],
+   "summary": "S05 was operated by Czechoslovak State Security (StB) under an ITU-registered callsign \"OLX\" (though officially assigned to ČTK, the press agency) and allocated frequencies. The language was Czech. Replaced in early 1980s by S05a .",
+   "url": "https://priyom.org/number-stations/slavic/s05"
+  },
+  {
+   "id": "S05a",
+   "name": "Rapid Dots (OLX)",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M06a"
+   ],
+   "summary": "S05a was operated by Czechoslovak State Security under an ITU-registered callsign \"OLX\" (though officially assigned to ČTK, the press agency) and allocated frequencies. The language was Czech. Replaced in early 1990s by S05b .",
+   "url": "https://priyom.org/number-stations/slavic/s05a"
+  },
+  {
+   "id": "S05b",
+   "name": "OLX",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M06"
+   ],
+   "summary": "S05b was operated by Czech Office of Foreign Relations and Information (ÚZSI) under an ITU-registered callsign \"OLX\" (though officially assigned to ČTK, the press agency) and allocated frequencies. The language was Czech. It differs from the previous format S05a with different tuning signal and no null messages whatsoever. Last heard in 1996, replaced by S10d .",
+   "url": "https://priyom.org/number-stations/slavic/s05b"
+  },
+  {
+   "id": "S06",
+   "name": "Russian Man",
+   "family": "slavic",
+   "status": "active",
+   "voice": "Male",
+   "mode": "USB + carrier",
+   "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "G06",
+    "V06",
+    "V23",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "S06 schedules consist of 2 identical transmissions 30 or 60 minutes apart. The latter transmission is 1-3 MHz lower or higher in frequency. In case traffic was sent, the two transmissions are usually also made the next day, at the same times and frequencies. In case of interference on the planned frequency, S06 may broadcast up to 2 kHz away instead.",
+   "url": "https://priyom.org/number-stations/slavic/s06"
+  },
+  {
+   "id": "S06a",
+   "name": "Russian Man",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Male, automated",
+   "mode": "AM",
+   "location": "Russian SFSR, Soviet Union",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S06a was a station with S06 voice, which continuously sent the 5-figure group 55555 or 00000, depending on frequency. Heard daily in mid-1991. [1]",
+   "url": "https://priyom.org/number-stations/slavic/s06a"
+  },
+  {
+   "id": "S06c",
+   "name": "Russian Man",
+   "family": "slavic",
+   "status": "active",
+   "voice": "Male",
+   "mode": "USB + carrier",
+   "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S06c is a Russian station that uses the same voice generator as S06 .",
+   "url": "https://priyom.org/number-stations/slavic/s06c"
+  },
+  {
+   "id": "S06s",
+   "name": "Russian Lady 0 0 0 0 0",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB + carrier, AM",
+   "location": "Rivne, Ukraine",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E17z"
+   ],
+   "summary": "S06s is the Russian language mode of the Ukrainian sz operator. It has brutally ceased all operations since the night of February 24, 2022, when the large-scale military invasion of Ukraine by Russia began.",
+   "url": "https://priyom.org/number-stations/slavic/s06s"
+  },
+  {
+   "id": "S07",
+   "name": "Russian Man 000 000",
+   "family": "slavic",
+   "status": "hibernated",
+   "voice": "Male",
+   "mode": "AM",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S07 was the Russian language mode of the Russian 7 operator. Retired in March 2001.",
+   "url": "https://priyom.org/number-stations/slavic/s07"
+  },
+  {
+   "id": "S08",
+   "name": "YT",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, live",
+   "mode": "AM",
+   "location": "Yugoslavia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S08 is believed to have been operated by Yugoslavian intelligence. Last heard in 1996. The language was Serbo-Croat.",
+   "url": "https://priyom.org/number-stations/slavic/s08"
+  },
+  {
+   "id": "S10",
+   "name": "",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Live male and female operators",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M10"
+   ],
+   "summary": "S10 was ran by Czechoslovak military intelligence. This designator refers to the original format from mid 1970s to early 1980s. Around mid 1980s replaced by automated format S10b .",
+   "url": "https://priyom.org/number-stations/slavic/s10"
+  },
+  {
+   "id": "S10a",
+   "name": "",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S10a was presumably a null message format of S10b . Reportedly rarely heard.",
+   "url": "https://priyom.org/number-stations/slavic/s10a"
+  },
+  {
+   "id": "S10b",
+   "name": "Bulgarian Betty",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S10b was ran by Czechoslovak military intelligence. Replacement for S10 . Ceased in December 1990. Later returned in 1996 as S10d .",
+   "url": "https://priyom.org/number-stations/slavic/s10b"
+  },
+  {
+   "id": "S10d",
+   "name": "\"Bulgarian Betty\"",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M10"
+   ],
+   "summary": "S10d was run by the Czech Military Intelligence (Czech: Vojenské zpravodajství). Active from 1996 until 20 June 2007.",
+   "url": "https://priyom.org/number-stations/slavic/s10d"
+  },
+  {
+   "id": "S10e",
+   "name": "",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Male, automated",
+   "mode": "AM",
+   "location": "?",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M11"
+   ],
+   "summary": "S10e was in Slovak language, but it is uncertain whether it belonged to Slovakia or Czechia. Last heard in 2003.",
+   "url": "https://priyom.org/number-stations/slavic/s10e"
+  },
+  {
+   "id": "S11",
+   "name": "Kreska",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "Warsaw, Poland",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11",
+    "G11",
+    "S11a",
+    "M03"
+   ],
+   "summary": "S11 was the Polish language mode of the Polish 11 operator. It was last reported as a regular operation in early 1994 [1] and has since been replaced by the Russian language  S11a . The most recent known transmissions of S11 are training broadcasts made in August/September 2002. [2][3]",
+   "url": "https://priyom.org/number-stations/slavic/s11"
+  },
+  {
+   "id": "S11a",
+   "name": "Cherta",
+   "family": "slavic",
+   "status": "active",
+   "voice": "Female",
+   "mode": "USB",
+   "location": "52°25'46\"N 20°52'53\"E (Warsaw, Poland)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E11",
+    "G11",
+    "S11",
+    "M03",
+    "F03",
+    "F11",
+    "P03"
+   ],
+   "summary": "All S11a schedules are twice weekly, follow year-round UTC (no daylight saving), and use one of three different frequencies depending on the month - one from November to February, another from May to August, and yet another for the remaining months. The first two digits of the ID identify a particular schedule, in a system shared with the sister mode E11 .",
+   "url": "https://priyom.org/number-stations/slavic/s11a"
+  },
+  {
+   "id": "S17a",
+   "name": "Czech Lady \"Control\"",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S17a was run by the Czech military intelligence. It was a \"control\" variant of S10d that did not convey actual messages.",
+   "url": "https://priyom.org/number-stations/slavic/s17a"
+  },
+  {
+   "id": "S17b",
+   "name": "Czech Lady \"Control\"",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "AM",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S17b was run by the Czech military intelligence. The language was Czech. It was a variant of S10d that always conveyed a single group message.",
+   "url": "https://priyom.org/number-stations/slavic/s17b"
+  },
+  {
+   "id": "S17c",
+   "name": "Czech Lady \"Control\"",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB",
+   "location": "Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S17c was run by the Czech Military Intelligence (Czech: Vojenské zpravodajství). Last heard on 19 June 2007.",
+   "url": "https://priyom.org/number-stations/slavic/s17c"
+  },
+  {
+   "id": "S21",
+   "name": "Russian Man 0 0 0",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Male, automated (the same as S06)",
+   "mode": "USB + carrier",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M45"
+   ],
+   "summary": "S21 is believed to have transmitted from Russian naval base in Kaliningrad. The language was Russian. It initially utilized a female voice, with the final figures in groups inflected, but starting in October 2010, it used the same voice as S06 . Last heard in October 2013.",
+   "url": "https://priyom.org/number-stations/slavic/s21"
+  },
+  {
+   "id": "S25",
+   "name": "Russian Man \"Control\"",
+   "family": "slavic",
+   "status": "hibernated",
+   "voice": "Male",
+   "mode": "USB + carrier",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S25 is a Russian station that uses the same voice generator as S06 .",
+   "url": "https://priyom.org/number-stations/slavic/s25"
+  },
+  {
+   "id": "S26",
+   "name": "Cyt Cyt",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Poland",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S26 was operated by one of Polish intelligence agencies. Ceased in late 1970s, replaced by S11 .",
+   "url": "https://priyom.org/number-stations/slavic/s26"
+  },
+  {
+   "id": "S28",
+   "name": "The Buzzer, Жужжалка, UVB-76 (mistranscription of \"UZB76\"), UZB76 (pre 1997-2010), MDZhB (2010-2015), ZhUOZ (2016-2019), ANVF (2019-2020), NZhTI (2021-Present)",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Controlled from Saint Petersburg (60th Communication Hub \"Vulkan\"); transmitted from near Saint Petersburg and Moscow",
+   "frequencies_khz": [
+    4625
+   ],
+   "counterparts": [],
+   "summary": "\"The Buzzer\" , known among Russian listeners as \"Жужжалка\" ( Zhuzhzhalka ; English: Hummer), is a Russian military commandment network serving the Leningrad Military District. It broadcasts around the clock on 4625 kHz.",
+   "url": "https://priyom.org/military-stations/russia/the-buzzer"
+  },
+  {
+   "id": "S30",
+   "name": "The Pip, Капля, 8C1Щ, ЙВБ1",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Rostov-on-Don, Russia; 47°17'58\"N 39°40'25\"E (72nd Communication Hub, callsign: Акация)",
+   "frequencies_khz": [
+    3756,
+    5448
+   ],
+   "counterparts": [
+    "The Squeaky Wheel",
+    "Vega",
+    "Baron-78"
+   ],
+   "summary": "\"The Pip\" , known among Russian listeners as \"Капля\" ( Kaplya ; English: Drop), is a Russian military commandment network serving the Southern Military District . It broadcasts on 5448 kHz during daytime, changing to 3756 kHz for nighttime.",
+   "url": "https://priyom.org/military-stations/russia/the-pip"
+  },
+  {
+   "id": "S31",
+   "name": "",
+   "family": "slavic",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Hradešín, Czechoslovakia",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "S31 was not a number station. It was Czech(oslovak) army testing its equipment by sending test counts. Last heard in 2000 after more than 30 years of operation.",
+   "url": "https://priyom.org/number-stations/slavic/s31"
+  },
+  {
+   "id": "S32",
+   "name": "The Squeaky Wheel, Скрипучее Колесо",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB, CW",
+   "location": "Rostov-on-Don, Russia; location not confirmed, either the 72nd Communication Hub, or the 4th Air Defense Army",
+   "frequencies_khz": [
+    4108,
+    5361,
+    5367
+   ],
+   "counterparts": [
+    "The Pip",
+    "Vega",
+    "Baron-78"
+   ],
+   "summary": "\"The Squeaky Wheel\" is a Russian military commandment network serving the Southern Military District . It broadcasts on 5367 kHz during daytime, changing to 3363.5 kHz for nighttime.",
+   "url": "https://priyom.org/military-stations/russia/the-squeaky-wheel"
+  },
+  {
+   "id": "SK01",
+   "name": "",
+   "family": "digital",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "AM; RDFT",
+   "location": "Havana, Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "V02a",
+    "M08a"
+   ],
+   "summary": "SK01 is the former digital flavor of the Cuban DGI . Replaced by HM01 in 2012.",
+   "url": "https://priyom.org/number-stations/digital/sk01"
+  },
+  {
+   "id": "T marker",
+   "name": "T-Marker (РХПВ/RHPW)",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Russia",
+   "frequencies_khz": [
+    4325
+   ],
+   "counterparts": [],
+   "summary": "\"T-Marker\" is a Russian military commandment network serving the Western Military District . It broadcasts on 4325 kHz round the clock.",
+   "url": "https://priyom.org/military-stations/russia/t-marker"
+  },
+  {
+   "id": "The Air Horn",
+   "name": "The Air Horn",
+   "family": "russia",
+   "status": "inactive",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "near Smolensk, Russia",
+   "frequencies_khz": [
+    4930
+   ],
+   "counterparts": [],
+   "summary": "\"The Air Horn\" is a Russian military commandment network serving the Western Military District . It transmits on 4930 kHz around the clock. For more than 5 years, apart from test counts, call checks and other technical tests, it had not been heard with any apparent actual traffic, until September 20, 2022 - one day before Russia announced partial mobilization for the war in Ukraine. Its traffic is apparently addressed to Нева100 (Neva100).",
+   "url": "https://priyom.org/military-stations/russia/the-air-horn"
+  },
+  {
+   "id": "The Alarm",
+   "name": "The Alarm",
+   "family": "russia",
+   "status": "inactive",
+   "voice": "",
+   "mode": "USB",
+   "location": "near Smolensk, Russia",
+   "frequencies_khz": [
+    4770
+   ],
+   "counterparts": [],
+   "summary": "\"The Alarm\" is a Russian military commandment network serving the Western Military District . It broadcasts on 4770 kHz around the clock. So far, apart from test counts, it has not been heard with any actual traffic.",
+   "url": "https://priyom.org/military-stations/russia/the-alarm"
+  },
+  {
+   "id": "The Goose",
+   "name": "The Goose",
+   "family": "russia",
+   "status": "inactive",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "near Smolensk, Russia",
+   "frequencies_khz": [
+    3243,
+    4310
+   ],
+   "counterparts": [],
+   "summary": "\"The Goose\"  is a Russian military commandment network serving the Western Military District . It broadcasts on 4310 kHz during daytime, changing to 3243 kHz for nighttime.",
+   "url": "https://priyom.org/military-stations/russia/the-goose"
+  },
+  {
+   "id": "UM04",
+   "name": "PROMRCh",
+   "family": "bulgaria",
+   "status": "active",
+   "voice": "no",
+   "mode": "Morse code",
+   "location": "Bulgaria, Near Bankya",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The transmitter site is near Bankya. ( Google Maps ). Barracks and a HF-RDF site are nearby. Google Streetmaps shows antennae at this site.",
+   "url": "https://priyom.org/military-stations/bulgaria/um04"
+  },
+  {
+   "id": "V01",
+   "name": "Ciocârlia/The Skylark",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Male, live (a few voices)",
+   "mode": "AM",
+   "location": "Romania",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V01 was operated by Romanian intellignece. Its transmissions were pre-recorded on and played back from tapes. Ceased soon after the Romanian revolution in 1989.",
+   "url": "https://priyom.org/number-stations/other/v01"
+  },
+  {
+   "id": "V02",
+   "name": "Atención",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M08"
+   ],
+   "summary": "V02 is the former Spanish language flavor of the Cuban DGI . Replaced by V02a in 1997.",
+   "url": "https://priyom.org/number-stations/other/v02"
+  },
+  {
+   "id": "V02a",
+   "name": "Atención",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "LSB",
+   "location": "Havana, Cuba",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M08a",
+    "SK01"
+   ],
+   "summary": "V02a was the Spanish language flavor of the Cuban DGI . Superseded by HM01 .",
+   "url": "https://priyom.org/number-stations/other/v02a"
+  },
+  {
+   "id": "V05",
+   "name": "Counting - Spanish 3/2F",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "USB, USB+carrier",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V05 was the Spanish equivalent of E05, following the same format and characteristics. Last heard in February 2001.",
+   "url": "https://priyom.org/number-stations/other/v05"
+  },
+  {
+   "id": "V05a",
+   "name": "Spanish Counting (4-figure)",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB, USB+carrier",
+   "location": "USA",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E05",
+    "G05",
+    "E14",
+    "E21",
+    "V14"
+   ],
+   "summary": "V05a is a variant of the Spanish flavour of the E05 family. Instead of using 5-figure groups, it used 4-figure groups. The rest of the format was identic.",
+   "url": "https://priyom.org/number-stations/other/v05a"
+  },
+  {
+   "id": "V06",
+   "name": "Spanish Lady 00000",
+   "family": "other",
+   "status": "hibernated",
+   "voice": "Female",
+   "mode": "USB + carrier",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "E17",
+    "G06",
+    "S06",
+    "V23",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "V06 is the Spanish language mode of the Russian 6 operator. It was retired as a regular operation in 2000.",
+   "url": "https://priyom.org/number-stations/other/v06"
+  },
+  {
+   "id": "V07",
+   "name": "Spanish Lady 000 000",
+   "family": "other",
+   "status": "active",
+   "voice": "Female (Spanish)",
+   "mode": "USB",
+   "location": "Khabarovsk, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "M12",
+    "XP",
+    "XPA",
+    "XPA2",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "In case of an unexpected interruption during the transmission, the station restarts with the intro, repeated for one minute, followed by the current message continued from some groups before the failure; the preamble is omitted.",
+   "url": "https://priyom.org/number-stations/other/v07"
+  },
+  {
+   "id": "V07f",
+   "name": "",
+   "family": "other",
+   "status": "hibernated",
+   "voice": "Female (French)",
+   "mode": "",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "V07",
+    "M12",
+    "XP",
+    "XPA",
+    "XPA2",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "V07f is the French language mode of the Russian 7 operator. In was first heard in 2021, and to date, it has only been heard twice, in test transmissions in Europe: on October 2nd, 2021, and on March 4th, 2024. Apart from being another language mode of the same operator, it does not otherwise relate to the Spanish language V07 specifically.",
+   "url": "https://priyom.org/number-stations/other/v07f"
+  },
+  {
+   "id": "V08",
+   "name": "Eastern Music station",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female, prerecorded",
+   "mode": "AM",
+   "location": "Unknown (North Africa)",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E09"
+   ],
+   "summary": "Schedule, transmission times shifted an hour later for winter. Note that the schedules were erratic and could start at other times: [3]",
+   "url": "https://priyom.org/number-stations/other/v08"
+  },
+  {
+   "id": "V10",
+   "name": "Schlosst",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Male, live",
+   "mode": "USB",
+   "location": "Unknown",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The station used a different phonetic alphabet. Each word except Kilo is a Christian name from Central Europe countries.Note that there are two variations of the letter P and no letter Z after all: Anna, Berta, Carlo, Danielle, Emelle, Figaro, Gustav, Hipolit, Ida, Jacob, Kilo, Leopold, Marta, Nicola, Olga, Philip, Pietro, Quasi, Rosa, Softi, Tiodo, Ulrike, Victor, Willi, Xavier, Yvonne.",
+   "url": "https://priyom.org/number-stations/other/v10"
+  },
+  {
+   "id": "V12",
+   "name": "NNN French",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "AM",
+   "location": "",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "",
+   "url": "https://priyom.org/number-stations/other/v12"
+  },
+  {
+   "id": "V13",
+   "name": "New Star Broadcasting Station",
+   "family": "other",
+   "status": "active",
+   "voice": "Female (Mandarin Chinese)",
+   "mode": "USB + carrier, AM (V13a)",
+   "location": "Taiwan",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V13, New Star Broadcasting ( 新星廣播電臺 Xinxing Guangbo Diantai)  is a Taiwanese number station.",
+   "url": "https://priyom.org/number-stations/other/v13"
+  },
+  {
+   "id": "V14",
+   "name": "Counting ‘control’ - Spanish",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female, automated",
+   "mode": "USB. USB+carrier",
+   "location": "USA",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E05",
+    "G05",
+    "V05",
+    "E14",
+    "E21"
+   ],
+   "summary": "V14 was the Spanish control flavour of the E05 family. The format was identical to E14, but it ran on separate schedules.",
+   "url": "https://priyom.org/number-stations/other/v14"
+  },
+  {
+   "id": "V15",
+   "name": "",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female (Korean)",
+   "mode": "AM",
+   "location": "North Korea",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V15 is a North Korean number station. It operates as a program on the domestic broadcaster  Pyongyang Broadcasting Station (Korean: 평양방송 pyeong-yangbangsong ).",
+   "url": "https://priyom.org/number-stations/other/v15"
+  },
+  {
+   "id": "V18",
+   "name": "NNN Hungarian",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female",
+   "mode": "A3E (AM)",
+   "location": "Hungary",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "",
+   "url": "https://priyom.org/number-stations/other/v18"
+  },
+  {
+   "id": "V19",
+   "name": "WTR21 (“Don’t Cry for Me Argentina”)",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Male, live",
+   "mode": "AM",
+   "location": "Unknown",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The language was Spanish. V19 was heard only once, one day in mid-80s, in Germany. Only one recording exists, which is part of The Conet Project.",
+   "url": "https://priyom.org/number-stations/other/v19"
+  },
+  {
+   "id": "V20",
+   "name": "Bored Man/Lazy Man",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Male, live",
+   "mode": "USB",
+   "location": "Cuba",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "The language was Spanish. V20 was possibly related to the Cuban spy network La Red Avispa, which was formed by a total of 27 agents. Last heard in August 1998, shortly before the network was dismantled. Some of these agents would also be involved in the case of the Cuban Five  later that year.",
+   "url": "https://priyom.org/number-stations/other/v20"
+  },
+  {
+   "id": "V23",
+   "name": "",
+   "family": "other",
+   "status": "hibernated",
+   "voice": "Male",
+   "mode": "USB + carrier",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E06",
+    "G06",
+    "S06",
+    "V06",
+    "M14",
+    "F01",
+    "F06"
+   ],
+   "summary": "V23 is the French language mode of the Russian 6 operator. To date, it has only been heard for brief periods in August 1999, March 2010, May 2016, September 2017, and February 2021.",
+   "url": "https://priyom.org/number-stations/other/v23"
+  },
+  {
+   "id": "V24",
+   "name": "",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Female (Korean)",
+   "mode": "AM",
+   "location": "South Korea",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M94"
+   ],
+   "summary": "V24 schedules are thrice monthly and assigned to fixed days of the month. Transmissions do not take place when there is no message to be broadcast. Each schedule has a specific musical introduction, usually a contemporary K-pop song or a classical music piece.",
+   "url": "https://priyom.org/number-stations/other/v24"
+  },
+  {
+   "id": "V28",
+   "name": "The Parrot",
+   "family": "other",
+   "status": "active",
+   "voice": "Male and female, live, in Korean",
+   "mode": "AM",
+   "location": "North Korea",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V28 \"The Parrot\" is a North Korean station, which was first heard in November 2015. The prevailing hypothesis is that it is a military station, although this is unconfirmed. [1] V28 transmits twice a day, in the local morning and evening, on randomly variable frequencies. The transmissions' contents are spoken by live operators in Korean.",
+   "url": "https://priyom.org/number-stations/other/v28"
+  },
+  {
+   "id": "V30",
+   "name": "The Lighthouse",
+   "family": "other",
+   "status": "inactive",
+   "voice": "Male and female",
+   "mode": "USB",
+   "location": "Vietnam",
+   "frequencies_khz": [],
+   "counterparts": [
+    "M97"
+   ],
+   "summary": "The language was Vietnamese. Voice counterpart of M97. First heard on February 21, 2010, and last heard on May 6, 2016.",
+   "url": "https://priyom.org/number-stations/other/v30"
+  },
+  {
+   "id": "V32",
+   "name": "",
+   "family": "other",
+   "status": "active",
+   "voice": "Male, Persian",
+   "mode": "USB",
+   "location": "48°41'26\"N 9°05'12\"E (Stuttgart, Germany)",
+   "frequencies_khz": [],
+   "counterparts": [],
+   "summary": "V32 is a station sending numbers in the Persian (aka Farsi) language, spoken in Iran. It is believed to be a US intelligence operation against the Islamic Republic regime of Iran as part of the 2026 Iran war . It first appeared on the air the day the war started, and is broadcast from a US military base near Stuttgart, Germany. Its transmissions have been recurrently targeted back by the Iranian so-called \"bubble\" jammer.",
+   "url": "https://priyom.org/number-stations/other/v32"
+  },
+  {
+   "id": "Vega",
+   "name": "Vega (original callsign Vega-33), НЬЖЙ/N'ZhJ",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Southern Military District, Russia",
+   "frequencies_khz": [
+    5372
+   ],
+   "counterparts": [
+    "The Pip",
+    "Squeaky Wheel",
+    "Baron-78"
+   ],
+   "summary": "Vega-33 (Вега-33) is the original recipient callsign of a Russian military commandment network serving the Southern Military District . Based in Rostov-on-Don, it operates on 5372 kHz during daytime and does not broadcast a channel marker nor has a night frequency ever been established. However, there is occasionally a continuous 800 Hz tone which typically only lasts between two messages; this tone is also sometimes heard briefly just before a transmission.",
+   "url": "https://priyom.org/military-stations/russia/vega"
+  },
+  {
+   "id": "XP",
+   "name": "",
+   "family": "digital",
+   "status": "inactive",
+   "voice": "N/A",
+   "mode": "AM; 14-tone MFSK, 1 Bd and 7.5 Bd",
+   "location": "Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "V07",
+    "M12",
+    "XPA",
+    "XPA2",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "XP  was one of the digital flavors of the Russian 7 operator. Active from 1993 until 2005, it was replaced by XPA starting in 2003.",
+   "url": "https://priyom.org/number-stations/digital/xp"
+  },
+  {
+   "id": "XPA",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "USB; 17-tone MFSK, 10 Bd, 40 Hz",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "V07",
+    "M12",
+    "XP",
+    "XPA2",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "XPA is a digital mode of the Russian 7 operator. It utilizes a custom 17-tone MFSK system.",
+   "url": "https://priyom.org/number-stations/digital/xpa"
+  },
+  {
+   "id": "XPA2",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "USB; 14-tone MFSK, 7.8125 Bd, 15.625 Hz",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "G07",
+    "S07",
+    "V07",
+    "M12",
+    "XP",
+    "XPA",
+    "XPB",
+    "XPH"
+   ],
+   "summary": "XPA2 is a digital mode of the Russian 7 operator. It utilizes a custom 14-tone MFSK system.",
+   "url": "https://priyom.org/number-stations/digital/xpa2"
+  },
+  {
+   "id": "XPB",
+   "name": "",
+   "family": "digital",
+   "status": "active",
+   "voice": "N/A",
+   "mode": "USB; 16-tone MFSK, ~65.79 Bd, 175 Hz",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [],
+   "counterparts": [
+    "E07",
+    "V07",
+    "S07",
+    "G07",
+    "XPA",
+    "XPA2",
+    "XP",
+    "XPH",
+    "M12"
+   ],
+   "summary": "XPB  is a digital mode of the Russian 7 operator. It utilizes a custom 16-tone MFSK system.",
+   "url": "https://priyom.org/number-stations/digital/xpb"
+  },
+  {
+   "id": "Zaliv52",
+   "name": "Zaliv52 / Залив52",
+   "family": "russia",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Moscow, Russia",
+   "frequencies_khz": [
+    4110
+   ],
+   "counterparts": [],
+   "summary": "\"Zaliv52\"  is a Russian military commandment network serving the  Western Military District . It broadcasts on 4110 kHz without channel marker. First heard in 2017.",
+   "url": "https://priyom.org/military-stations/russia/zaliv52"
+  },
+  {
+   "id": "n/a",
+   "name": "",
+   "family": "belarus",
+   "status": "active",
+   "voice": "Male and female, live",
+   "mode": "USB",
+   "location": "Republic of Belarus",
+   "frequencies_khz": [],
+   "counterparts": [
+    "Vyezha"
+   ],
+   "summary": "First heard in 2017, this station serves Republic of Belarus and operates without a channel marker. The callsigns of recipients change during the year along with its frequencies, however unlike on the Vyezha channel, they also change after every year. There have been instances of more than one callsign for a given season and different callsigns used on the day and night frequencies. It relays Monolit messages sent on the Vyezha channel, usually 2-3 minutes after the innitial transmission. The messages have the same contents, although they are adressed to different callsigns.",
+   "url": "https://priyom.org/military-stations/belarus/three-two"
+  }
+ ]
+}

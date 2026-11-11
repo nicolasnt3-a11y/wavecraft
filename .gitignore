@@ -1,0 +1,22 @@
+# Fichiers d'instructions locales
+CLAUDE.md
+
+# Le site de présentation et le mode d'emploi restent en local : ils partent sur
+# nthill.be par FTP, jamais sur GitHub.
+/site/
+
+# Pages Priyom mises en cache par les outils de catalogue.
+/.cache/
+
+# Compilation Rust
+/app/target/
+/packaging/windows/setup/target/
+**/*.rs.bk
+
+# Réglages et enregistrements locaux
+/app/wavecraft-data/
+*.wav
+
+# Composants tiers téléchargés : ils sont reconstitués par le workflow de
+# publication à partir de packaging/windows/sources.txt.
+/vendor/

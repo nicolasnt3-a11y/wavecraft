@@ -1,0 +1,60 @@
+[package]
+name = "wavecraft"
+version = "0.1.0"
+edition = "2024"
+description = "Récepteur RTL-SDR dédié aux stations de nombres"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/nicolasnt3-a11y/wavecraft"
+rust-version = "1.85"
+
+[features]
+default = ["desktop", "server"]
+# Interface bureau (egui). Exclue des paquets serveur / LXC.
+desktop = ["dep:eframe", "dep:egui", "dep:png", "local-audio"]
+# Sortie audio sur la carte son locale.
+local-audio = ["dep:cpal"]
+# Serveur web + interface navigateur.
+server = ["dep:axum", "dep:tokio"]
+
+[dependencies]
+anyhow = "1.0.104"
+chrono = { version = "0.4.45", features = ["serde"] }
+hound = "3.5.1"
+libloading = "0.9.0"
+rustfft = "6.4.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+ureq = { version = "3.5.1", features = ["json"] }
+
+cpal = { version = "0.18.2", optional = true }
+eframe = { version = "0.37.0", optional = true }
+egui = { version = "0.37.0", optional = true }
+# Écriture des captures d'écran de la fenêtre (option --captures).
+png = { version = "0.18.1", optional = true }
+axum = { version = "0.8.9", optional = true }
+tokio = { version = "1.54.1", features = [
+    "rt-multi-thread",
+    "macros",
+    "net",
+    "signal",
+    "sync",
+    "time",
+], optional = true }
+regex = "1.13.1"
+nusb = "0.2.9"
+
+# Sous Windows seulement : pilotage de Zadig pour poser WinUSB (sdr/pilote.rs).
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61.2", features = [
+    "Win32_Foundation",
+    "Win32_System_Console",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true

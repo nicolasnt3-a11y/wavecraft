@@ -1,0 +1,28 @@
+[Unit]
+Description=Wavecraft — poste d'écoute des stations de nombres
+Documentation=https://nthill.be/wavecraft/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Ajoutez --password <mot> si le réseau n'est pas de confiance.
+ExecStart=/opt/wavecraft/wavecraft --server --bind 0.0.0.0 --port 8073
+Restart=on-failure
+RestartSec=5
+# Le service tourne sans privilège : l'accès à la clé vient de la règle udev.
+DynamicUser=yes
+SupplementaryGroups=plugdev
+StateDirectory=wavecraft
+Environment=WAVECRAFT_DATA_DIR=/var/lib/wavecraft
+# Le poste ne fait que recevoir : rien à écrire ailleurs, rien à élever.
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+RestrictRealtime=yes
+
+[Install]
+WantedBy=multi-user.target

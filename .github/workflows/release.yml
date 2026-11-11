@@ -1,0 +1,144 @@
+name: Publication
+
+# Une version se publie en posant une étiquette : git tag v0.1.0 && git push --tags.
+# Le déclenchement à la main sert aux essais ; il n'attache alors rien à une version.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Windows x64
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+
+      - name: Compiler
+        working-directory: app
+        run: cargo build --release
+
+      - name: Essais
+        working-directory: app
+        run: cargo test --release
+
+      # La bibliothèque RTL-SDR Blog et Zadig ne sont pas dans le dépôt : ils
+      # sont repris à leur source, et leur empreinte est vérifiée.
+      - name: Récupérer les composants tiers
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force tiers | Out-Null
+          Get-Content packaging/windows/sources.txt |
+            Where-Object { $_ -and -not $_.StartsWith('#') } |
+            ForEach-Object {
+              $nom, $url, $sha = $_ -split '\s+'
+              $fichier = "tiers/$nom" + [System.IO.Path]::GetExtension($url)
+              Invoke-WebRequest -Uri $url -OutFile $fichier
+              $reel = (Get-FileHash $fichier -Algorithm SHA256).Hash.ToLower()
+              if ($reel -ne $sha) {
+                throw "empreinte inattendue pour $nom : $reel"
+              }
+              Write-Host "$nom : empreinte vérifiée"
+            }
+
+      - name: Assembler le paquet
+        shell: pwsh
+        run: |
+          $paquet = "wavecraft-windows-x64"
+          New-Item -ItemType Directory -Force "$paquet/pilote" | Out-Null
+          Copy-Item app/target/release/wavecraft.exe $paquet/
+          Expand-Archive tiers/rtl-sdr-blog.zip -DestinationPath tiers/rtlsdr
+          # La bibliothèque va à côté de l'exécutable : Wavecraft la cherche là
+          # en premier, car elle seule gère la clé V4.
+          Copy-Item (Get-ChildItem tiers/rtlsdr -Recurse -Filter rtlsdr.dll |
+                     Where-Object { $_.FullName -match 'x64' } |
+                     Select-Object -First 1).FullName $paquet/
+          Copy-Item tiers/zadig.exe "$paquet/pilote/zadig.exe"
+          Copy-Item packaging/windows/Installer-Wavecraft.cmd, packaging/windows/installer.ps1 $paquet/
+          Copy-Item site/assets/img/wavecraft.ico $paquet/
+          Copy-Item README.md, LICENSE, THIRD_PARTY.md $paquet/
+          Compress-Archive -Path $paquet -DestinationPath "$paquet.zip"
+
+      - name: Compiler le setup autonome (wavecraft-setup.exe)
+        shell: pwsh
+        run: |
+          cargo build --manifest-path packaging/windows/setup/Cargo.toml --release
+          Copy-Item packaging/windows/setup/target/release/wavecraft-setup.exe wavecraft-setup.exe
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wavecraft-windows-x64
+          path: |
+            wavecraft-windows-x64.zip
+            wavecraft-setup.exe
+
+  linux:
+    name: Linux x64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+
+      # Bibliothèques nécessaires à la fenêtre et à la sortie audio.
+      - name: Dépendances système
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libxkbcommon-dev libwayland-dev \
+            libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev libx11-dev \
+            libgl1-mesa-dev libudev-dev
+
+      - name: Essais
+        working-directory: app
+        run: cargo test --release
+
+      - name: Compiler la version bureau
+        working-directory: app
+        run: cargo build --release
+
+      - name: Assembler le paquet bureau
+        run: |
+          paquet=wavecraft-linux-x64
+          mkdir -p "$paquet"
+          cp app/target/release/wavecraft "$paquet/"
+          cp packaging/linux/* "$paquet/"
+          cp README.md LICENSE THIRD_PARTY.md "$paquet/"
+          tar czf "$paquet.tar.gz" "$paquet"
+
+      # Le paquet serveur se construit sans interface : il tourne dans un
+      # conteneur sans écran, donc sans bibliothèque graphique.
+      - name: Compiler la version serveur
+        working-directory: app
+        run: cargo build --release --no-default-features --features server
+
+      - name: Assembler le paquet serveur
+        run: |
+          paquet=wavecraft-linux-x64-serveur
+          mkdir -p "$paquet"
+          cp app/target/release/wavecraft "$paquet/"
+          cp packaging/linux/install.sh packaging/linux/60-wavecraft-rtlsdr.rules \
+             packaging/linux/wavecraft-rtlsdr.conf packaging/linux/wavecraft.service "$paquet/"
+          cp README.md LICENSE THIRD_PARTY.md "$paquet/"
+          tar czf "$paquet.tar.gz" "$paquet"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wavecraft-linux-x64
+          path: wavecraft-linux-x64*.tar.gz
+
+  publier:
+    name: Attacher à la version
+    needs: [windows, linux]
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: paquets
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: paquets/**/*
+          generate_release_notes: true
