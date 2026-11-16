@@ -1,9 +1,9 @@
 {
- "version": 2,
- "generated_at": "2026-11-11T10:29:14Z",
+ "version": 3,
+ "generated_at": "2026-11-16T12:48:18Z",
  "source": "https://calendar2.priyom.org/events",
  "window_days": 14,
- "events_seen": 1679,
+ "events_seen": 1436,
  "stations": [
   {
    "id": "Baron-78",
@@ -355,7 +355,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-24",
+   "last_seen": "2026-11-28",
    "family": "english",
    "voice": "Male",
    "location": "Moscow, Russia",
@@ -1138,7 +1138,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "english",
    "voice": "Female",
    "location": "52°25'46\"N 20°52'53\"E (Warsaw, Poland)",
@@ -1787,7 +1787,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
@@ -2177,7 +2177,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-30"
   },
   {
    "id": "F06",
@@ -2456,21 +2456,42 @@
      "seen": 2
     },
     {
-     "frequency_khz": 5929,
+     "frequency_khz": 4645,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
      "seen": 1
     },
     {
-     "frequency_khz": 7316,
+     "frequency_khz": 5267,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
      "seen": 1
     },
     {
-     "frequency_khz": 8174,
+     "frequency_khz": 6781,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 12079,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 13859,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 14840,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -3091,7 +3112,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
@@ -3266,7 +3287,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-24",
+   "last_seen": "2026-11-26",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -4003,7 +4024,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-24",
+   "last_seen": "2026-11-29",
    "family": "morse",
    "voice": "N/A",
    "location": "Russia",
@@ -5176,7 +5197,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-24",
+   "last_seen": "2026-11-30",
    "family": "morse",
    "voice": "N/A",
    "location": "Moscow, Russia; Khabarovsk, Russia",
@@ -5418,7 +5439,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "morse",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -6114,7 +6135,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-30"
   },
   {
    "id": "P07",
@@ -6254,7 +6275,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-22",
+   "last_seen": "2026-11-29",
    "family": "digital",
    "voice": "N/A",
    "location": "Russia",
@@ -6562,7 +6583,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "slavic",
    "voice": "Male",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia",
@@ -6960,7 +6981,7 @@
    "status": "inactive",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "slavic",
    "voice": "Female",
    "location": "Warsaw, Poland",
@@ -7592,7 +7613,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-15",
-   "last_seen": "2026-11-22",
+   "last_seen": "2026-11-29",
    "family": "other",
    "voice": "Female (Spanish)",
    "location": "Khabarovsk, Russia",
@@ -8974,7 +8995,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "other",
    "voice": "Female (Mandarin Chinese)",
    "location": "Taiwan",
@@ -9289,7 +9310,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "other",
    "voice": "Male, Persian",
    "location": "48°41'26\"N 9°05'12\"E (Stuttgart, Germany)",
@@ -9433,7 +9454,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-20",
+   "last_seen": "2026-11-27",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -9458,34 +9479,6 @@
    "variants": [],
    "targets": [],
    "presets": [
-    {
-     "frequency_khz": 17434,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 10
-    },
-    {
-     "frequency_khz": 17421,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 7
-    },
-    {
-     "frequency_khz": 12212,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 6
-    },
-    {
-     "frequency_khz": 15821,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 6
-    },
     {
      "frequency_khz": 8153,
      "mode": "USB",
@@ -9550,20 +9543,6 @@
      "seen": 4
     },
     {
-     "frequency_khz": 13479,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 13491,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 13968,
      "mode": "USB",
      "bandwidth_hz": 2700,
@@ -9571,49 +9550,7 @@
      "seen": 4
     },
     {
-     "frequency_khz": 14402,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 14458,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 14694,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 14812,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 14968,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 15824,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 15963,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -9634,13 +9571,6 @@
      "seen": 4
     },
     {
-     "frequency_khz": 16240,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 16267,
      "mode": "USB",
      "bandwidth_hz": 2700,
@@ -9648,21 +9578,14 @@
      "seen": 4
     },
     {
-     "frequency_khz": 16341,
+     "frequency_khz": 17421,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
      "seen": 4
     },
     {
-     "frequency_khz": 17412,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 17416,
+     "frequency_khz": 17434,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -9723,419 +9646,6 @@
      "bandwidth_hz": 2700,
      "squelch": false,
      "seen": 4
-    },
-    {
-     "frequency_khz": 10563,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 11163,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 12138,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 12166,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 12182,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 12184,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13411,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13423,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13468,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13471,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13472,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13494,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13496,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13508,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13911,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13961,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 13993,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14357,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14376,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14384,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14411,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14528,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14541,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14666,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14689,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14714,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14737,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14788,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14793,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14874,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14918,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14958,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 14963,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15804,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15826,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15833,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15867,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15902,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15928,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15945,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15965,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 15981,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16076,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16107,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16111,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16128,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16129,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16142,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16216,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16266,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16304,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 16327,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17413,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17418,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17420,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17423,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17429,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17431,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
-    },
-    {
-     "frequency_khz": 17436,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 3
     }
    ],
    "slots": [
@@ -10479,7 +9989,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-25",
+   "last_seen": "2026-11-30",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -10540,7 +10050,7 @@
      "seen": 8
     },
     {
-     "frequency_khz": 20286,
+     "frequency_khz": 19339,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -10593,7 +10103,7 @@
     {
      "weekday": 0,
      "utc": "06:00",
-     "frequency_khz": 20286,
+     "frequency_khz": 19339,
      "mode": "USB",
      "count": 2
     },
@@ -10635,7 +10145,7 @@
     {
      "weekday": 1,
      "utc": "06:00",
-     "frequency_khz": 20286,
+     "frequency_khz": 19339,
      "mode": "USB",
      "count": 2
     },
@@ -10719,7 +10229,7 @@
     {
      "weekday": 3,
      "utc": "06:00",
-     "frequency_khz": 20286,
+     "frequency_khz": 19339,
      "mode": "USB",
      "count": 2
     },
@@ -10761,7 +10271,7 @@
     {
      "weekday": 4,
      "utc": "06:00",
-     "frequency_khz": 20286,
+     "frequency_khz": 19339,
      "mode": "USB",
      "count": 2
     },
@@ -10846,7 +10356,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-24",
+   "last_seen": "2026-11-30",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
