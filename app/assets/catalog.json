@@ -1,9 +1,9 @@
 {
- "version": 3,
- "generated_at": "2026-11-16T12:48:18Z",
+ "version": 4,
+ "generated_at": "2026-11-23T14:43:22Z",
  "source": "https://calendar2.priyom.org/events",
  "window_days": 14,
- "events_seen": 1436,
+ "events_seen": 1457,
  "stations": [
   {
    "id": "Baron-78",
@@ -191,16 +191,45 @@
   },
   {
    "id": "E06",
+   "name": "English Man",
    "variants": [],
    "targets": [],
-   "presets": [],
+   "presets": [
+    {
+     "frequency_khz": 6792,
+     "mode": "USB/AM",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9481,
+     "mode": "USB/AM",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9951,
+     "mode": "USB/AM",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 11514,
+     "mode": "USB/AM",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
+    }
+   ],
    "slots": [],
-   "first_seen": "",
-   "last_seen": "",
-   "notes": "",
-   "name": "English Man",
-   "family": "english",
    "status": "active",
+   "notes": "",
+   "first_seen": "2026-12-05",
+   "last_seen": "2026-12-06",
+   "family": "english",
    "voice": "Male",
    "location": "Moscow, Russia; Orenburg, Russia; Smolensk, Russia; Chita, Russia",
    "summary": "E06 schedules consist of 2 identical transmissions 1 hour apart. The latter transmission is 1-3 MHz lower or higher in frequency. In case traffic was sent, the two transmissions are usually also made the next day, at the same times and frequencies. In case of interference on the planned frequency, E06 may broadcast up to 20 kHz away instead.",
@@ -224,138 +253,95 @@
    "targets": [],
    "presets": [
     {
+     "frequency_khz": 10239,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 12137,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 12139,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 13537,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 13539,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 14737,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 14789,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14794,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 16132,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16217,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 17428,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 17469,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     }
    ],
-   "slots": [
-    {
-     "weekday": 1,
-     "utc": "15:00",
-     "frequency_khz": 14737,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "15:20",
-     "frequency_khz": 13537,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "15:40",
-     "frequency_khz": 12137,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "10:00",
-     "frequency_khz": 17428,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "10:20",
-     "frequency_khz": 16132,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "10:40",
-     "frequency_khz": 14789,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "15:00",
-     "frequency_khz": 14737,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "15:20",
-     "frequency_khz": 13537,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "15:40",
-     "frequency_khz": 12137,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "10:00",
-     "frequency_khz": 17428,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "10:20",
-     "frequency_khz": 16132,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "10:40",
-     "frequency_khz": 14789,
-     "mode": "USB",
-     "count": 2
-    }
-   ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-28",
+   "last_seen": "2026-12-05",
    "family": "english",
    "voice": "Male",
    "location": "Moscow, Russia",
@@ -1138,7 +1124,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "english",
    "voice": "Female",
    "location": "52°25'46\"N 20°52'53\"E (Warsaw, Poland)",
@@ -1446,21 +1432,7 @@
    ],
    "presets": [
     {
-     "frequency_khz": 8024,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 10
-    },
-    {
      "frequency_khz": 10614,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 10
-    },
-    {
-     "frequency_khz": 10671,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -1474,13 +1446,6 @@
      "seen": 10
     },
     {
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 10
-    },
-    {
      "frequency_khz": 13370,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
@@ -1488,65 +1453,107 @@
      "seen": 10
     },
     {
+     "frequency_khz": 8016,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 8024,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 10336,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 10671,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 12164,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 12177,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 8157,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 9215,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10884,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 12101,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 15765,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18169,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18702,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 20741,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     }
    ],
    "slots": [
     {
      "weekday": 0,
-     "utc": "00:25",
-     "frequency_khz": 12101,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "00:35",
-     "frequency_khz": 9215,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "01:25",
-     "frequency_khz": 12101,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "01:35",
-     "frequency_khz": 9215,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
      "utc": "02:30",
      "frequency_khz": 13370,
      "mode": "RTTY",
@@ -1563,27 +1570,6 @@
      "weekday": 0,
      "utc": "02:50",
      "frequency_khz": 10614,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "10:15",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "10:25",
-     "frequency_khz": 10671,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "10:35",
-     "frequency_khz": 8024,
      "mode": "RTTY",
      "count": 2
     },
@@ -1609,27 +1595,6 @@
      "count": 2
     },
     {
-     "weekday": 1,
-     "utc": "10:15",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "10:25",
-     "frequency_khz": 10671,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "10:35",
-     "frequency_khz": 8024,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
      "weekday": 2,
      "utc": "02:30",
      "frequency_khz": 13370,
@@ -1647,27 +1612,6 @@
      "weekday": 2,
      "utc": "02:50",
      "frequency_khz": 10614,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "10:15",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "10:25",
-     "frequency_khz": 10671,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "10:35",
-     "frequency_khz": 8024,
      "mode": "RTTY",
      "count": 2
     },
@@ -1693,27 +1637,6 @@
      "count": 2
     },
     {
-     "weekday": 3,
-     "utc": "10:15",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "10:25",
-     "frequency_khz": 10671,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "10:35",
-     "frequency_khz": 8024,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
      "weekday": 4,
      "utc": "02:30",
      "frequency_khz": 13370,
@@ -1731,55 +1654,6 @@
      "weekday": 4,
      "utc": "02:50",
      "frequency_khz": 10614,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "10:15",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "10:25",
-     "frequency_khz": 10671,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "10:35",
-     "frequency_khz": 8024,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "22:30",
-     "frequency_khz": 20741,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "22:40",
-     "frequency_khz": 18702,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "23:30",
-     "frequency_khz": 20741,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "23:40",
-     "frequency_khz": 18702,
      "mode": "RTTY",
      "count": 2
     }
@@ -1787,7 +1661,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
@@ -1836,28 +1710,7 @@
      "seen": 4
     },
     {
-     "frequency_khz": 6906,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 6940,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 8800,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9049,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -1878,20 +1731,6 @@
      "seen": 4
     },
     {
-     "frequency_khz": 16005,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 16388,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 17120,
      "mode": "USB",
      "bandwidth_hz": 2700,
@@ -1906,51 +1745,107 @@
      "seen": 4
     },
     {
+     "frequency_khz": 6480,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6906,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6940,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9049,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16005,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16388,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16530,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 17378,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18978,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 21854,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 22992,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 25336,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 26117,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 26472,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     }
    ],
    "slots": [
     {
      "weekday": 0,
-     "utc": "05:30",
-     "frequency_khz": 25336,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:15",
-     "frequency_khz": 21854,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
      "utc": "06:30",
      "frequency_khz": 13424,
      "mode": "USB",
@@ -1960,13 +1855,6 @@
      "weekday": 0,
      "utc": "07:35",
      "frequency_khz": 8800,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:10",
-     "frequency_khz": 26117,
      "mode": "USB",
      "count": 2
     },
@@ -1992,65 +1880,9 @@
      "count": 2
     },
     {
-     "weekday": 0,
-     "utc": "10:30",
-     "frequency_khz": 16005,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:15",
-     "frequency_khz": 6906,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:35",
-     "frequency_khz": 22992,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "08:10",
-     "frequency_khz": 16388,
-     "mode": "USB",
-     "count": 2
-    },
-    {
      "weekday": 1,
      "utc": "08:35",
      "frequency_khz": 17120,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "09:45",
-     "frequency_khz": 6940,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "04:30",
-     "frequency_khz": 20994,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "05:30",
-     "frequency_khz": 25336,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "06:15",
-     "frequency_khz": 21854,
      "mode": "USB",
      "count": 2
     },
@@ -2083,41 +1915,6 @@
      "count": 2
     },
     {
-     "weekday": 2,
-     "utc": "10:30",
-     "frequency_khz": 16005,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "04:30",
-     "frequency_khz": 20994,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:15",
-     "frequency_khz": 6906,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:35",
-     "frequency_khz": 22992,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "07:00",
-     "frequency_khz": 9049,
-     "mode": "USB",
-     "count": 2
-    },
-    {
      "weekday": 3,
      "utc": "07:35",
      "frequency_khz": 8800,
@@ -2140,36 +1937,8 @@
     },
     {
      "weekday": 4,
-     "utc": "07:00",
-     "frequency_khz": 9049,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "08:10",
-     "frequency_khz": 26117,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "08:50",
-     "frequency_khz": 16388,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
      "utc": "09:30",
      "frequency_khz": 6304,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "09:45",
-     "frequency_khz": 6940,
      "mode": "USB",
      "count": 2
     }
@@ -2177,7 +1946,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30"
+   "last_seen": "2026-12-07"
   },
   {
    "id": "F06",
@@ -2189,27 +1958,6 @@
     "Pacific"
    ],
    "presets": [
-    {
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 12
-    },
-    {
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 10
-    },
-    {
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 10
-    },
     {
      "frequency_khz": 14428,
      "mode": "RTTY",
@@ -2232,224 +1980,210 @@
      "seen": 10
     },
     {
+     "frequency_khz": 8138,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 6
+    },
+    {
+     "frequency_khz": 7479,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 9065,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 10156,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 11046,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 12177,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 5
+    },
+    {
+     "frequency_khz": 5789,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 4
+    },
+    {
      "frequency_khz": 6869,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 8
+     "seen": 4
+    },
+    {
+     "frequency_khz": 7624,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 4
     },
     {
      "frequency_khz": 8082,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 8
+     "seen": 4
+    },
+    {
+     "frequency_khz": 9178,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 4
     },
     {
      "frequency_khz": 10231,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 8
+     "seen": 4
+    },
+    {
+     "frequency_khz": 7739,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 8014,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 9993,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10169,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 10191,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 11637,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 12184,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 12207,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 12208,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 13374,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 13831,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14369,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 16274,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 16316,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16337,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18677,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 19633,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 20889,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 7323,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 9486,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 10196,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 10938,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 11631,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 11643,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 13469,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 13521,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 14475,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 14858,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 17465,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 17517,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 18043,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 18493,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 19177,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 19670,
-     "mode": "RTTY",
-     "bandwidth_hz": 1000,
-     "squelch": false,
-     "seen": 2
-    },
-    {
-     "frequency_khz": 23467,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -2470,7 +2204,147 @@
      "seen": 1
     },
     {
+     "frequency_khz": 5463,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 5783,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 6774,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
      "frequency_khz": 6781,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 7323,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 7337,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 7362,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 7379,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 8131,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 8153,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9363,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9426,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9481,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9486,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 10196,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 10286,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 10575,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 10938,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 11567,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 11631,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 11643,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -2484,7 +2358,49 @@
      "seen": 1
     },
     {
+     "frequency_khz": 12125,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 12209,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 12211,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 13469,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 13521,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
      "frequency_khz": 13859,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 14475,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -2498,7 +2414,112 @@
      "seen": 1
     },
     {
+     "frequency_khz": 14858,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 15693,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 15946,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 16252,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 17465,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 17515,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 17517,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 18043,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 18357,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 18493,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 18732,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 19177,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 19670,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 20539,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
      "frequency_khz": 22887,
+     "mode": "RTTY",
+     "bandwidth_hz": 1000,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 23467,
      "mode": "RTTY",
      "bandwidth_hz": 1000,
      "squelch": false,
@@ -2542,132 +2563,6 @@
      "count": 2
     },
     {
-     "weekday": 0,
-     "utc": "07:00",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "07:15",
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "07:30",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:00",
-     "frequency_khz": 12208,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:10",
-     "frequency_khz": 10191,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:20",
-     "frequency_khz": 8014,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "12:00",
-     "frequency_khz": 10231,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "12:15",
-     "frequency_khz": 8082,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "12:30",
-     "frequency_khz": 6869,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:00",
-     "frequency_khz": 13374,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:00",
-     "frequency_khz": 16316,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:15",
-     "frequency_khz": 11637,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:15",
-     "frequency_khz": 13831,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:30",
-     "frequency_khz": 9993,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "14:30",
-     "frequency_khz": 12207,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "00:30",
-     "frequency_khz": 10938,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "00:40",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "00:50",
-     "frequency_khz": 7323,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
      "weekday": 1,
      "utc": "01:00",
      "frequency_khz": 17532,
@@ -2685,132 +2580,6 @@
      "weekday": 1,
      "utc": "01:20",
      "frequency_khz": 14428,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "07:00",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "07:10",
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "07:20",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "08:00",
-     "frequency_khz": 12208,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "08:10",
-     "frequency_khz": 10191,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "08:20",
-     "frequency_khz": 8014,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "12:00",
-     "frequency_khz": 10231,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "12:10",
-     "frequency_khz": 8082,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "12:20",
-     "frequency_khz": 6869,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:00",
-     "frequency_khz": 13374,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:00",
-     "frequency_khz": 16316,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:15",
-     "frequency_khz": 11637,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:15",
-     "frequency_khz": 13831,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:30",
-     "frequency_khz": 9993,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "14:30",
-     "frequency_khz": 12207,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "16:50",
-     "frequency_khz": 13469,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:00",
-     "frequency_khz": 11643,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:10",
-     "frequency_khz": 9486,
      "mode": "RTTY",
      "count": 2
     },
@@ -2836,69 +2605,6 @@
      "count": 2
     },
     {
-     "weekday": 2,
-     "utc": "06:00",
-     "frequency_khz": 16274,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "06:15",
-     "frequency_khz": 18677,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "06:30",
-     "frequency_khz": 20889,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "07:00",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "07:15",
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "07:30",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:00",
-     "frequency_khz": 10231,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:15",
-     "frequency_khz": 8082,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:30",
-     "frequency_khz": 6869,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
      "weekday": 3,
      "utc": "01:00",
      "frequency_khz": 17532,
@@ -2920,90 +2626,6 @@
      "count": 2
     },
     {
-     "weekday": 3,
-     "utc": "06:00",
-     "frequency_khz": 16274,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:15",
-     "frequency_khz": 18677,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:30",
-     "frequency_khz": 20889,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "07:00",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "07:10",
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "07:20",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "12:00",
-     "frequency_khz": 10231,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "12:10",
-     "frequency_khz": 8082,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "12:20",
-     "frequency_khz": 6869,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "13:30",
-     "frequency_khz": 17465,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "13:40",
-     "frequency_khz": 14858,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "13:50",
-     "frequency_khz": 11631,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
      "weekday": 4,
      "utc": "01:00",
      "frequency_khz": 17532,
@@ -3021,90 +2643,6 @@
      "weekday": 4,
      "utc": "01:20",
      "frequency_khz": 14428,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "07:00",
-     "frequency_khz": 12177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "07:10",
-     "frequency_khz": 10156,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "07:20",
-     "frequency_khz": 8138,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "16:00",
-     "frequency_khz": 23467,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "16:15",
-     "frequency_khz": 19670,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "16:30",
-     "frequency_khz": 18043,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:30",
-     "frequency_khz": 14475,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:40",
-     "frequency_khz": 13521,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:50",
-     "frequency_khz": 10196,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "16:00",
-     "frequency_khz": 19177,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "16:15",
-     "frequency_khz": 18493,
-     "mode": "RTTY",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "16:30",
-     "frequency_khz": 17517,
      "mode": "RTTY",
      "count": 2
     }
@@ -3112,7 +2650,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia; Havana, Cuba",
@@ -3156,138 +2694,95 @@
    "targets": [],
    "presets": [
     {
+     "frequency_khz": 5169,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 5748,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 5818,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6773,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 6802,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 6992,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6993,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7453,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7526,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 7541,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 7856,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 8182,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     }
    ],
-   "slots": [
-    {
-     "weekday": 1,
-     "utc": "21:00",
-     "frequency_khz": 8182,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "21:10",
-     "frequency_khz": 7856,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "21:20",
-     "frequency_khz": 7541,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "21:30",
-     "frequency_khz": 6992,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "21:40",
-     "frequency_khz": 6802,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "21:50",
-     "frequency_khz": 5818,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:00",
-     "frequency_khz": 8182,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:10",
-     "frequency_khz": 7856,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:20",
-     "frequency_khz": 7541,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:30",
-     "frequency_khz": 6992,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:40",
-     "frequency_khz": 6802,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "21:50",
-     "frequency_khz": 5818,
-     "mode": "USB",
-     "count": 2
-    }
-   ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-26",
+   "last_seen": "2026-12-03",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -3352,7 +2847,7 @@
    "status": "active",
    "voice": "Male, live",
    "location": "Presumably Naro-Fominsk, Russia",
-   "summary": "\"FGKT\" / \"ФГКТ\"  is a Russian military commandment network serving the Moscow Military District. It broadcasts around the clock on 6970 kHz.",
+   "summary": "\"FGKT\" / \"ФГКТ\"  is a Russian military commandment network serving the Moscow Military District. It broadcasts around the clock on same frequency, which is either 5400 kHz or 6970 kHz - it changes randomly throughout the year.",
    "url": "https://priyom.org/military-stations/russia/fgkt",
    "counterparts": [],
    "continuous": true
@@ -4024,7 +3519,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-29",
+   "last_seen": "2026-12-06",
    "family": "morse",
    "voice": "N/A",
    "location": "Russia",
@@ -4457,14 +3952,14 @@
    ],
    "presets": [
     {
-     "frequency_khz": 11526,
+     "frequency_khz": 12195,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 10
+     "seen": 12
     },
     {
-     "frequency_khz": 12195,
+     "frequency_khz": 11526,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
@@ -4520,133 +4015,140 @@
      "seen": 6
     },
     {
-     "frequency_khz": 5117,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 5817,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 6917,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 7893,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 7946,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 8132,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
+     "seen": 3
     },
     {
      "frequency_khz": 9046,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9263,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9314,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 10174,
-     "mode": "CW",
-     "bandwidth_hz": 500,
-     "squelch": false,
-     "seen": 4
+     "seen": 3
     },
     {
      "frequency_khz": 10446,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 3
     },
     {
-     "frequency_khz": 11156,
+     "frequency_khz": 5092,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 13461,
+     "frequency_khz": 5117,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 13484,
+     "frequency_khz": 5817,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 14537,
+     "frequency_khz": 5892,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 14784,
+     "frequency_khz": 6792,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 16152,
+     "frequency_khz": 6897,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
-     "frequency_khz": 16184,
+     "frequency_khz": 6917,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7795,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7893,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8132,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8187,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9263,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9314,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10174,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 10713,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 11154,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 11156,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
@@ -4660,35 +4162,105 @@
      "seen": 2
     },
     {
+     "frequency_khz": 12154,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 12165,
      "mode": "CW",
      "bandwidth_hz": 500,
      "squelch": false,
      "seen": 2
+    },
+    {
+     "frequency_khz": 13461,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 13478,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 13484,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14354,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14537,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14736,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14784,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16152,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16184,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7534,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 8134,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 9134,
+     "mode": "CW",
+     "bandwidth_hz": 500,
+     "squelch": false,
+     "seen": 1
     }
    ],
    "slots": [
-    {
-     "weekday": 0,
-     "utc": "02:00",
-     "frequency_khz": 16152,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "02:20",
-     "frequency_khz": 14537,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "02:40",
-     "frequency_khz": 13461,
-     "mode": "CW",
-     "count": 2
-    },
     {
      "weekday": 0,
      "utc": "12:30",
@@ -4775,27 +4347,6 @@
     },
     {
      "weekday": 1,
-     "utc": "03:00",
-     "frequency_khz": 16184,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "03:20",
-     "frequency_khz": 14784,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "03:40",
-     "frequency_khz": 13484,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 1,
      "utc": "11:00",
      "frequency_khz": 10713,
      "mode": "CW",
@@ -4854,69 +4405,6 @@
      "weekday": 2,
      "utc": "19:40",
      "frequency_khz": 10627,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "20:00",
-     "frequency_khz": 6917,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "20:20",
-     "frequency_khz": 5817,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "20:40",
-     "frequency_khz": 5117,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "23:10",
-     "frequency_khz": 11156,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "23:30",
-     "frequency_khz": 10174,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "23:50",
-     "frequency_khz": 9314,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "03:00",
-     "frequency_khz": 16184,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "03:20",
-     "frequency_khz": 14784,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "03:40",
-     "frequency_khz": 13484,
      "mode": "CW",
      "count": 2
     },
@@ -4984,90 +4472,6 @@
      "count": 2
     },
     {
-     "weekday": 3,
-     "utc": "23:00",
-     "frequency_khz": 10446,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "23:20",
-     "frequency_khz": 9046,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "23:40",
-     "frequency_khz": 7946,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "02:00",
-     "frequency_khz": 16152,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "02:20",
-     "frequency_khz": 14537,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "02:40",
-     "frequency_khz": 13461,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "20:00",
-     "frequency_khz": 6917,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "20:20",
-     "frequency_khz": 5817,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "20:40",
-     "frequency_khz": 5117,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "22:00",
-     "frequency_khz": 7893,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "22:20",
-     "frequency_khz": 8132,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "22:40",
-     "frequency_khz": 9263,
-     "mode": "CW",
-     "count": 2
-    },
-    {
      "weekday": 5,
      "utc": "19:00",
      "frequency_khz": 11564,
@@ -5106,27 +4510,6 @@
      "weekday": 5,
      "utc": "19:40",
      "frequency_khz": 10627,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "22:00",
-     "frequency_khz": 7893,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "22:20",
-     "frequency_khz": 8132,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "22:40",
-     "frequency_khz": 9263,
      "mode": "CW",
      "count": 2
     },
@@ -5171,33 +4554,12 @@
      "frequency_khz": 11526,
      "mode": "CW",
      "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "23:10",
-     "frequency_khz": 11156,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "23:30",
-     "frequency_khz": 10174,
-     "mode": "CW",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "23:50",
-     "frequency_khz": 9314,
-     "mode": "CW",
-     "count": 2
     }
    ],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "morse",
    "voice": "N/A",
    "location": "Moscow, Russia; Khabarovsk, Russia",
@@ -5439,7 +4801,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "morse",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -5682,28 +5044,28 @@
    "targets": [],
    "presets": [
     {
-     "frequency_khz": 5844,
+     "frequency_khz": 6252,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 6
     },
     {
      "frequency_khz": 6480,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 6
     },
     {
-     "frequency_khz": 5823,
+     "frequency_khz": 5779,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
      "seen": 4
     },
     {
-     "frequency_khz": 6252,
+     "frequency_khz": 5844,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -5724,35 +5086,7 @@
      "seen": 4
     },
     {
-     "frequency_khz": 6977,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 7391,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 7727,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 8102,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 8180,
+     "frequency_khz": 7504,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -5760,27 +5094,6 @@
     },
     {
      "frequency_khz": 9052,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9446,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 10728,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 12202,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
@@ -5801,42 +5114,161 @@
      "seen": 4
     },
     {
+     "frequency_khz": 5371,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 5823,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6433,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6940,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6977,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7391,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7469,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 7727,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8102,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8180,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8800,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9446,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10429,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10728,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 12089,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 12202,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 17535,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 18030,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18168,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18265,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 21906,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 23031,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     }
    ],
    "slots": [
-    {
-     "weekday": 0,
-     "utc": "12:00",
-     "frequency_khz": 7727,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "12:20",
-     "frequency_khz": 21906,
-     "mode": "USB",
-     "count": 2
-    },
     {
      "weekday": 0,
      "utc": "18:30",
@@ -5867,34 +5299,6 @@
     },
     {
      "weekday": 1,
-     "utc": "11:00",
-     "frequency_khz": 12202,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "12:30",
-     "frequency_khz": 18030,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "15:00",
-     "frequency_khz": 9446,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:25",
-     "frequency_khz": 10728,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
      "utc": "18:00",
      "frequency_khz": 6480,
      "mode": "USB",
@@ -5909,13 +5313,6 @@
     },
     {
      "weekday": 2,
-     "utc": "11:00",
-     "frequency_khz": 12202,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
      "utc": "13:10",
      "frequency_khz": 6524,
      "mode": "USB",
@@ -5925,20 +5322,6 @@
      "weekday": 2,
      "utc": "13:15",
      "frequency_khz": 13046,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "13:45",
-     "frequency_khz": 8102,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "17:30",
-     "frequency_khz": 8180,
      "mode": "USB",
      "count": 2
     },
@@ -5958,13 +5341,6 @@
     },
     {
      "weekday": 3,
-     "utc": "12:00",
-     "frequency_khz": 7727,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
      "utc": "18:00",
      "frequency_khz": 6480,
      "mode": "USB",
@@ -5978,79 +5354,9 @@
      "count": 2
     },
     {
-     "weekday": 3,
-     "utc": "19:50",
-     "frequency_khz": 5844,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "05:30",
-     "frequency_khz": 5844,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "11:00",
-     "frequency_khz": 6977,
-     "mode": "USB",
-     "count": 2
-    },
-    {
      "weekday": 4,
      "utc": "13:15",
      "frequency_khz": 13046,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:45",
-     "frequency_khz": 8102,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "15:00",
-     "frequency_khz": 9446,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "15:15",
-     "frequency_khz": 18265,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "06:30",
-     "frequency_khz": 6480,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "10:20",
-     "frequency_khz": 5823,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "12:30",
-     "frequency_khz": 18030,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "12:45",
-     "frequency_khz": 7391,
      "mode": "USB",
      "count": 2
     },
@@ -6060,82 +5366,12 @@
      "frequency_khz": 6524,
      "mode": "USB",
      "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "17:30",
-     "frequency_khz": 8180,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "05:30",
-     "frequency_khz": 5844,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "06:30",
-     "frequency_khz": 6480,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "10:20",
-     "frequency_khz": 5823,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "11:00",
-     "frequency_khz": 6977,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "12:20",
-     "frequency_khz": 21906,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "12:45",
-     "frequency_khz": 7391,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:15",
-     "frequency_khz": 18265,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "17:25",
-     "frequency_khz": 10728,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "19:50",
-     "frequency_khz": 5844,
-     "mode": "USB",
-     "count": 2
     }
    ],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30"
+   "last_seen": "2026-12-07"
   },
   {
    "id": "P07",
@@ -6144,138 +5380,95 @@
    "targets": [],
    "presets": [
     {
+     "frequency_khz": 4609,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 5082,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 5112,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 5336,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 5848,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 5853,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6774,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 6821,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 6986,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 7504,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 8074,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 8136,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     }
    ],
-   "slots": [
-    {
-     "weekday": 2,
-     "utc": "15:00",
-     "frequency_khz": 8136,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "15:10",
-     "frequency_khz": 8074,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "15:20",
-     "frequency_khz": 7504,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "15:30",
-     "frequency_khz": 6821,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "15:40",
-     "frequency_khz": 5848,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "15:50",
-     "frequency_khz": 5112,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:00",
-     "frequency_khz": 8136,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:10",
-     "frequency_khz": 8074,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:20",
-     "frequency_khz": 7504,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:30",
-     "frequency_khz": 6821,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:40",
-     "frequency_khz": 5848,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "15:50",
-     "frequency_khz": 5112,
-     "mode": "USB",
-     "count": 2
-    }
-   ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-29",
+   "last_seen": "2026-12-06",
    "family": "digital",
    "voice": "N/A",
    "location": "Russia",
@@ -6506,6 +5699,13 @@
      "bandwidth_hz": 2700,
      "squelch": false,
      "seen": 1
+    },
+    {
+     "frequency_khz": 9425,
+     "mode": "USB/AM",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
     }
    ],
    "slots": [
@@ -6583,7 +5783,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "slavic",
    "voice": "Male",
    "location": "Moscow, Russia; Orenburg, Russia; Chita, Russia",
@@ -6981,7 +6181,7 @@
    "status": "inactive",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "slavic",
    "voice": "Female",
    "location": "Warsaw, Poland",
@@ -7570,50 +6770,49 @@
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 2
+     "seen": 1
+    },
+    {
+     "frequency_khz": 14549,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
+    },
+    {
+     "frequency_khz": 15949,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
     },
     {
      "frequency_khz": 16131,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 2
+     "seen": 1
     },
     {
      "frequency_khz": 17431,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 2
-    }
-   ],
-   "slots": [
-    {
-     "weekday": 6,
-     "utc": "02:00",
-     "frequency_khz": 17431,
-     "mode": "USB",
-     "count": 2
+     "seen": 1
     },
     {
-     "weekday": 6,
-     "utc": "02:20",
-     "frequency_khz": 16131,
+     "frequency_khz": 18249,
      "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 6,
-     "utc": "02:40",
-     "frequency_khz": 14431,
-     "mode": "USB",
-     "count": 2
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 1
     }
    ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-15",
-   "last_seen": "2026-11-29",
+   "last_seen": "2026-12-06",
    "family": "other",
    "voice": "Female (Spanish)",
    "location": "Khabarovsk, Russia",
@@ -8995,7 +8194,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "other",
    "voice": "Female (Mandarin Chinese)",
    "location": "Taiwan",
@@ -9310,7 +8509,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "other",
    "voice": "Male, Persian",
    "location": "48°41'26\"N 9°05'12\"E (Stuttgart, Germany)",
@@ -9386,75 +8585,53 @@
    "targets": [],
    "presets": [
     {
+     "frequency_khz": 10265,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
      "frequency_khz": 10875,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 12165,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 13375,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 13465,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 13875,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     }
    ],
-   "slots": [
-    {
-     "weekday": 2,
-     "utc": "13:10",
-     "frequency_khz": 13875,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "13:30",
-     "frequency_khz": 13375,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "13:50",
-     "frequency_khz": 10875,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:10",
-     "frequency_khz": 13875,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:30",
-     "frequency_khz": 13375,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:50",
-     "frequency_khz": 10875,
-     "mode": "USB",
-     "count": 2
-    }
-   ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-27",
+   "last_seen": "2026-12-04",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -9480,219 +8657,282 @@
    "targets": [],
    "presets": [
     {
-     "frequency_khz": 8153,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9193,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 9353,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 10294,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
      "frequency_khz": 10447,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 10653,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
-    },
-    {
-     "frequency_khz": 11158,
-     "mode": "USB",
-     "bandwidth_hz": 2700,
-     "squelch": false,
-     "seen": 4
+     "seen": 3
     },
     {
      "frequency_khz": 12137,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 3
     },
     {
      "frequency_khz": 13382,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 3
+    },
+    {
+     "frequency_khz": 7665,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8097,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8153,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 8165,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9193,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9265,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9342,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 9353,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10197,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10294,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 10653,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 11158,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 13968,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14678,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 14694,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 14841,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 15914,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 15968,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16146,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 16226,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16241,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 16267,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16279,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 17421,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 17431,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 17434,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 17452,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 17468,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 18038,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 18055,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18241,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18371,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18391,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18551,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 19354,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 19456,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     }
    ],
    "slots": [
     {
      "weekday": 0,
-     "utc": "08:00",
-     "frequency_khz": 16226,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:20",
-     "frequency_khz": 17434,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "08:40",
-     "frequency_khz": 18055,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "09:10",
-     "frequency_khz": 19354,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "09:30",
-     "frequency_khz": 18551,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "09:50",
-     "frequency_khz": 17452,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
      "utc": "16:00",
      "frequency_khz": 13382,
      "mode": "USB",
@@ -9707,279 +8947,6 @@
     },
     {
      "weekday": 0,
-     "utc": "16:40",
-     "frequency_khz": 10447,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "11:00",
-     "frequency_khz": 10653,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "11:20",
-     "frequency_khz": 9353,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "11:40",
-     "frequency_khz": 8153,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:00",
-     "frequency_khz": 11158,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:20",
-     "frequency_khz": 10294,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "17:40",
-     "frequency_khz": 9193,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "08:00",
-     "frequency_khz": 16226,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "08:20",
-     "frequency_khz": 17434,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "08:40",
-     "frequency_khz": 18055,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "09:10",
-     "frequency_khz": 19354,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "09:30",
-     "frequency_khz": 18551,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "09:50",
-     "frequency_khz": 17452,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "11:00",
-     "frequency_khz": 18038,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "11:20",
-     "frequency_khz": 16267,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "11:40",
-     "frequency_khz": 14694,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:00",
-     "frequency_khz": 13968,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:20",
-     "frequency_khz": 15968,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 2,
-     "utc": "12:40",
-     "frequency_khz": 17468,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "09:00",
-     "frequency_khz": 19456,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "09:20",
-     "frequency_khz": 18371,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "09:40",
-     "frequency_khz": 17421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "11:00",
-     "frequency_khz": 18038,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "11:20",
-     "frequency_khz": 16267,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "11:40",
-     "frequency_khz": 14694,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "17:00",
-     "frequency_khz": 11158,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "17:20",
-     "frequency_khz": 10294,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "17:40",
-     "frequency_khz": 9193,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "11:00",
-     "frequency_khz": 10653,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "11:20",
-     "frequency_khz": 9353,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "11:40",
-     "frequency_khz": 8153,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "12:00",
-     "frequency_khz": 13968,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "12:20",
-     "frequency_khz": 15968,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "12:40",
-     "frequency_khz": 17468,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "09:00",
-     "frequency_khz": 19456,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "09:20",
-     "frequency_khz": 18371,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "09:40",
-     "frequency_khz": 17421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "16:00",
-     "frequency_khz": 13382,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
-     "utc": "16:20",
-     "frequency_khz": 12137,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 5,
      "utc": "16:40",
      "frequency_khz": 10447,
      "mode": "USB",
@@ -9989,7 +8956,7 @@
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-11",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
@@ -10019,344 +8986,133 @@
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
     },
     {
      "frequency_khz": 15839,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
     },
     {
      "frequency_khz": 16339,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
     },
     {
      "frequency_khz": 17439,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
     },
     {
      "frequency_khz": 18239,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
     },
     {
      "frequency_khz": 19339,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 8
+     "seen": 4
+    },
+    {
+     "frequency_khz": 14944,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 15921,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 16244,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 16321,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 17421,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 17444,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 18421,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 18544,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
+    },
+    {
+     "frequency_khz": 19344,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     },
     {
      "frequency_khz": 19521,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
     },
     {
      "frequency_khz": 20021,
      "mode": "USB",
      "bandwidth_hz": 2700,
      "squelch": false,
-     "seen": 4
+     "seen": 2
+    },
+    {
+     "frequency_khz": 20044,
+     "mode": "USB",
+     "bandwidth_hz": 2700,
+     "squelch": false,
+     "seen": 2
     }
    ],
-   "slots": [
-    {
-     "weekday": 0,
-     "utc": "06:00",
-     "frequency_khz": 19339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:10",
-     "frequency_khz": 18239,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:20",
-     "frequency_khz": 17439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:30",
-     "frequency_khz": 16339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:40",
-     "frequency_khz": 15839,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 0,
-     "utc": "06:50",
-     "frequency_khz": 14439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:00",
-     "frequency_khz": 19339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:10",
-     "frequency_khz": 18239,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:20",
-     "frequency_khz": 17439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:30",
-     "frequency_khz": 16339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:40",
-     "frequency_khz": 15839,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "06:50",
-     "frequency_khz": 14439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:00",
-     "frequency_khz": 20021,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:10",
-     "frequency_khz": 19521,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:20",
-     "frequency_khz": 18421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:30",
-     "frequency_khz": 17421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:40",
-     "frequency_khz": 16321,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 1,
-     "utc": "13:50",
-     "frequency_khz": 15921,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:00",
-     "frequency_khz": 19339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:10",
-     "frequency_khz": 18239,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:20",
-     "frequency_khz": 17439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:30",
-     "frequency_khz": 16339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:40",
-     "frequency_khz": 15839,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 3,
-     "utc": "06:50",
-     "frequency_khz": 14439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:00",
-     "frequency_khz": 19339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:10",
-     "frequency_khz": 18239,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:20",
-     "frequency_khz": 17439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:30",
-     "frequency_khz": 16339,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:40",
-     "frequency_khz": 15839,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "06:50",
-     "frequency_khz": 14439,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:00",
-     "frequency_khz": 20021,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:10",
-     "frequency_khz": 19521,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:20",
-     "frequency_khz": 18421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:30",
-     "frequency_khz": 17421,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:40",
-     "frequency_khz": 16321,
-     "mode": "USB",
-     "count": 2
-    },
-    {
-     "weekday": 4,
-     "utc": "13:50",
-     "frequency_khz": 15921,
-     "mode": "USB",
-     "count": 2
-    }
-   ],
+   "slots": [],
    "status": "active",
    "notes": "",
    "first_seen": "2026-11-12",
-   "last_seen": "2026-11-30",
+   "last_seen": "2026-12-07",
    "family": "digital",
    "voice": "N/A",
    "location": "Moscow, Russia",
