@@ -81,6 +81,8 @@ pub struct Settings {
     pub server_port: u16,
     /// Mot de passe du serveur web ; vide, l'accès est libre.
     pub server_password: String,
+    /// Position de l'auditeur, utilisée pour indiquer comment orienter l'antenne.
+    pub position: Option<crate::antenna::Position>,
 }
 
 impl Default for Settings {
@@ -106,6 +108,7 @@ impl Default for Settings {
             first_run: true,
             server_port: 8073,
             server_password: String::new(),
+            position: None,
         }
     }
 }

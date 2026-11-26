@@ -8,6 +8,7 @@
 // est vérifiée sans cette tolérance.
 #![cfg_attr(not(feature = "desktop"), allow(dead_code))]
 
+mod antenna;
 mod audio;
 mod catalog;
 mod cli;

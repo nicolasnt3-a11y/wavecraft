@@ -84,6 +84,8 @@ pub struct AppState {
     pub demo: bool,
     inbox: Option<Receiver<Refreshed>>,
     refreshing: bool,
+    /// Détection de position en arrière-plan (IP).
+    locating: Option<Receiver<Result<crate::antenna::Position>>>,
     /// File audio secondaire, pour le serveur web.
     tap: Option<crate::audio::AudioSink>,
     /// Incrémenté à chaque démarrage du moteur : la sortie audio sait ainsi
@@ -114,6 +116,7 @@ impl AppState {
             demo,
             inbox: None,
             refreshing: false,
+            locating: None,
             tap: None,
             generation: 0,
         };
@@ -418,6 +421,54 @@ impl AppState {
         }
 
         self.check_schedule(Utc::now());
+
+        if let Some(rx) = &self.locating {
+            match rx.try_recv() {
+                Ok(Ok(pos)) => {
+                    self.message = format!(
+                        "position détectée : {} ({:.2}°, {:.2}°)",
+                        pos.label, pos.lat, pos.lon
+                    );
+                    self.settings.position = Some(pos);
+                    let _ = self.settings.save();
+                    self.locating = None;
+                }
+                Ok(Err(err)) => {
+                    self.message = format!("géolocalisation : {err:#}");
+                    self.locating = None;
+                }
+                Err(TryRecvError::Empty) => {}
+                Err(TryRecvError::Disconnected) => self.locating = None,
+            }
+        }
+    }
+
+    /// Lance la géolocalisation par IP en arrière-plan.
+    pub fn locate(&mut self) {
+        if self.locating.is_some() {
+            return;
+        }
+        let (tx, rx) = channel();
+        self.locating = Some(rx);
+        self.message = "détection de votre position…".into();
+        std::thread::spawn(move || {
+            let _ = tx.send(crate::antenna::detect_location());
+        });
+    }
+
+    pub fn is_locating(&self) -> bool {
+        self.locating.is_some()
+    }
+
+    /// Conseils d'orientation d'antenne pour une station donnée (ou Moscou par
+    /// défaut si aucune station précise n'est fournie ou localisée).
+    pub fn antenna_guidance(&self, station_id: Option<&str>) -> Option<crate::antenna::Guidance> {
+        let user = self.settings.position.as_ref()?;
+        let tx = station_id
+            .and_then(|id| self.catalog.station(id))
+            .and_then(|s| crate::antenna::resolve_transmitter(&s.location))
+            .unwrap_or_else(crate::antenna::default_reference_tx);
+        Some(crate::antenna::guidance(user, &tx))
     }
 
     /// Programme ou annule un enregistrement automatique pour un créneau donné.

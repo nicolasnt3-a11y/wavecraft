@@ -319,7 +319,6 @@ fn pilote(app: &mut super::App, ui: &mut egui::Ui, assistant: &mut Assistant) {
 }
 
 fn antenne(app: &mut super::App, ui: &mut egui::Ui, assistant: &mut Assistant) {
-    let _ = app;
     titre(ui, "Installer l'antenne");
     paragraphe(
         ui,
@@ -330,7 +329,9 @@ fn antenne(app: &mut super::App, ui: &mut egui::Ui, assistant: &mut Assistant) {
          • le fil tendu, pas enroulé.\n\
          Les fréquences basses passent surtout la nuit.",
     );
-    constat(ui, true, "rien à vérifier ici : l'oreille jugera");
+    ui.add_space(12.0);
+    super::antenne::panneau(app, ui, Some("S28"));
+    ui.add_space(12.0);
     ui.horizontal(|ui| {
         if style::bouton(ui, "Continuer", true).clicked() {
             assistant.etape = 3;

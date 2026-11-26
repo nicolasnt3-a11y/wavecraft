@@ -119,12 +119,15 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
     });
 
     ui.add_space(12.0);
-    let reserve = if app.state.settings.expert {
+    let mut reserve = if app.state.settings.expert {
         235.0
     } else {
         190.0
     };
-    let hauteur = (ui.available_height() - reserve).clamp(180.0, 430.0);
+    if app.show_antenna {
+        reserve += 185.0;
+    }
+    let hauteur = (ui.available_height() - reserve).clamp(150.0, 430.0);
     if let Some(target_hz) = app.waterfall.show_interactive(
         ui,
         hauteur,
@@ -138,6 +141,12 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
             mode: status.mode,
             bandwidth_hz: status.bandwidth_hz,
         });
+    }
+
+    if app.show_antenna {
+        ui.add_space(10.0);
+        let station_id = app.state.session.as_ref().map(|s| s.station.clone());
+        super::antenne::panneau(app, ui, station_id.as_deref());
     }
 
     ui.add_space(16.0);
@@ -231,6 +240,12 @@ fn commandes(app: &mut super::App, ui: &mut egui::Ui, mode: Mode, bande: f32) {
             }
             if style::bouton(ui, "Journal", false).clicked() {
                 app.page = super::Page::Journal;
+            }
+            if style::bouton(ui, "Antenne", app.show_antenna).clicked() {
+                app.show_antenna = !app.show_antenna;
+                if app.show_antenna && app.state.settings.position.is_none() {
+                    app.state.locate();
+                }
             }
         });
     });

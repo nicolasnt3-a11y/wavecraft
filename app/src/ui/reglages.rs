@@ -23,6 +23,8 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
             ui.add_space(18.0);
             ecoute(app, ui);
             ui.add_space(18.0);
+            position(app, ui);
+            ui.add_space(18.0);
             actualisation(app, ui);
             ui.add_space(18.0);
             dossiers(app, ui);
@@ -230,6 +232,53 @@ fn ecoute(app: &mut super::App, ui: &mut egui::Ui) {
                     .color(theme::MUTED.egui()),
             );
         });
+    });
+}
+
+fn position(app: &mut super::App, ui: &mut egui::Ui) {
+    let station_id = app.state.session.as_ref().map(|s| s.station.clone());
+    super::antenne::panneau(app, ui, station_id.as_deref());
+    ui.add_space(6.0);
+    ui.horizontal(|ui| {
+        style::caption(ui, "Coordonnées manuelles");
+        let (mut lat, mut lon, label) = match &app.state.settings.position {
+            Some(p) => (p.lat, p.lon, p.label.clone()),
+            None => (48.85, 2.35, "Position manuelle".to_string()),
+        };
+        let c1 = ui
+            .add(
+                egui::DragValue::new(&mut lat)
+                    .range(-90.0..=90.0)
+                    .speed(0.05)
+                    .prefix("Lat ")
+                    .suffix("°"),
+            )
+            .changed();
+        let c2 = ui
+            .add(
+                egui::DragValue::new(&mut lon)
+                    .range(-180.0..=180.0)
+                    .speed(0.05)
+                    .prefix("Lon ")
+                    .suffix("°"),
+            )
+            .changed();
+        if c1 || c2 {
+            app.state.settings.position = Some(crate::antenna::Position {
+                lat,
+                lon,
+                label: if label.is_empty() {
+                    "Position manuelle".to_string()
+                } else {
+                    label
+                },
+            });
+            let _ = app.state.settings.save();
+        }
+        if app.state.settings.position.is_some() && ui.button("Effacer").clicked() {
+            app.state.settings.position = None;
+            let _ = app.state.settings.save();
+        }
     });
 }
 

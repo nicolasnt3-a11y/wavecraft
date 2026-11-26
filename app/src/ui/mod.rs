@@ -5,6 +5,7 @@
 //! active, et un seul écran à la fois au centre. Rien n'y est décoratif : tout
 //! ce qui est affiché vient du moteur, du catalogue ou du journal.
 
+mod antenne;
 mod assistant;
 mod captures;
 mod catalogue;
@@ -128,6 +129,8 @@ pub struct App {
     pub serveur: serveur::ServerView,
     /// Saisie de fréquence libre en kHz sur l'écran Écoute.
     pub freq_input: String,
+    /// Affiche le panneau d'aide à l'orientation d'antenne sur l'écran Écoute.
+    pub show_antenna: bool,
     /// Lien avec le serveur web, créé au premier lancement de celui-ci.
     #[cfg(feature = "server")]
     pub link: crate::link::Link,
@@ -168,6 +171,7 @@ impl App {
             journal: journal::JournalView::default(),
             serveur: serveur::ServerView::default(),
             freq_input: String::new(),
+            show_antenna: false,
             #[cfg(feature = "server")]
             link: crate::link::Link::new(),
             error: None,
