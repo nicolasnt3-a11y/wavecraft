@@ -126,6 +126,8 @@ pub struct App {
     pub catalogue: catalogue::Catalogue,
     pub journal: journal::JournalView,
     pub serveur: serveur::ServerView,
+    /// Saisie de fréquence libre en kHz sur l'écran Écoute.
+    pub freq_input: String,
     /// Lien avec le serveur web, créé au premier lancement de celui-ci.
     #[cfg(feature = "server")]
     pub link: crate::link::Link,
@@ -165,6 +167,7 @@ impl App {
             catalogue: catalogue::Catalogue::default(),
             journal: journal::JournalView::default(),
             serveur: serveur::ServerView::default(),
+            freq_input: String::new(),
             #[cfg(feature = "server")]
             link: crate::link::Link::new(),
             error: None,
@@ -302,7 +305,7 @@ impl App {
     }
 
     /// Coupe le son d'un clic, et le rétablit au niveau d'avant.
-    fn volume_coupe(&mut self, actuel: f32) {
+    pub fn volume_coupe(&mut self, actuel: f32) {
         if actuel > 0.0 {
             self.volume_avant_coupure = actuel;
             self.state.set_volume(0.0);

@@ -14,6 +14,9 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
         return;
     };
 
+    // Raccourcis clavier (uniquement hors champ de texte).
+    raccourcis_clavier(app, ui, &status);
+
     // Ligne de rappel : station, mode et largeur de filtre.
     let station = app
         .state
@@ -21,11 +24,11 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
         .as_ref()
         .map(|s| s.station.clone())
         .unwrap_or_else(|| "libre".to_string());
-    let nom = app
+    let (nom, presets) = app
         .state
         .catalog
         .station(&station)
-        .map(|s| s.name_only())
+        .map(|s| (s.name_only(), s.presets.clone()))
         .unwrap_or_default();
     let mut entête = vec![station.clone()];
     if !nom.is_empty() {
@@ -33,9 +36,41 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
     }
     entête.push(status.mode.label().to_string());
     entête.push(format::bandwidth(status.bandwidth_hz));
-    style::caption(ui, &entête.join(" · "));
+    ui.horizontal(|ui| {
+        style::caption(ui, &entête.join(" · "));
+        // Fréquences secondaires connues pour la station en cours.
+        if presets.len() > 1 {
+            ui.add_space(16.0);
+            for preset in presets.iter().take(5) {
+                let active = (status.frequency_hz / 1_000) == preset.frequency_khz;
+                let label = format!("{} kHz", format::khz(preset.frequency_khz));
+                let btn = egui::Button::new(
+                    RichText::new(label)
+                        .size(11.0)
+                        .color(if active {
+                            theme::BACKGROUND.egui()
+                        } else {
+                            theme::TEXT_SOFT.egui()
+                        }),
+                )
+                .fill(if active {
+                    theme::ACCENT.egui()
+                } else {
+                    theme::BACKGROUND.egui()
+                });
+                if ui.add_sized(vec2(72.0, 22.0), btn).clicked() && !active {
+                    let mode = Mode::parse(&preset.mode).unwrap_or(status.mode);
+                    app.state.send(Command::Tune {
+                        frequency_hz: preset.frequency_khz * 1_000,
+                        mode,
+                        bandwidth_hz: preset.bandwidth() as f32,
+                    });
+                }
+            }
+        }
+    });
 
-    // La fréquence, en très grand : c'est le chiffre qu'on cherche des yeux.
+    // La fréquence, en très grand, avec accord fin et saisie directe à droite.
     ui.add_space(6.0);
     ui.horizontal(|ui| {
         ui.label(
@@ -48,16 +83,62 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
             ui.add_space(12.0);
             ui.label(RichText::new("kHz").size(16.0).color(theme::MUTED.egui()));
         });
+
+        ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+            // Saisie directe en kHz (ex: « 6804 » ou « 4625.5 »).
+            let aller = ui.add_sized(vec2(56.0, 28.0), egui::Button::new("Aller")).clicked();
+            let champ = ui.add(
+                egui::TextEdit::singleline(&mut app.freq_input)
+                    .hint_text("kHz…")
+                    .desired_width(96.0),
+            );
+            let valide = aller || (champ.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter)));
+            if valide {
+                if let Some(hz) = parse_khz(&app.freq_input) {
+                    let res = app.state.tune_manual(hz, status.mode, status.bandwidth_hz);
+                    app.report(res);
+                    app.freq_input.clear();
+                } else if !app.freq_input.trim().is_empty() {
+                    app.error = Some("fréquence invalide (ex. 4625 ou 6804.5)".into());
+                }
+            }
+
+            ui.add_space(10.0);
+            // Pas d'accord fin.
+            for (libellé, delta) in [
+                ("+1k", 1_000i64),
+                ("+100", 100),
+                ("-100", -100),
+                ("-1k", -1_000),
+            ] {
+                if ui.add_sized(vec2(48.0, 28.0), egui::Button::new(libellé)).clicked() {
+                    nudge_freq(app, &status, delta);
+                }
+            }
+        });
     });
 
-    ui.add_space(14.0);
+    ui.add_space(12.0);
     let reserve = if app.state.settings.expert {
         235.0
     } else {
         190.0
     };
-    let hauteur = (ui.available_height() - reserve).clamp(160.0, 430.0);
-    app.waterfall.show(ui, hauteur);
+    let hauteur = (ui.available_height() - reserve).clamp(180.0, 430.0);
+    if let Some(target_hz) = app.waterfall.show_interactive(
+        ui,
+        hauteur,
+        status.frequency_hz,
+        status.sample_rate,
+        status.mode,
+        status.bandwidth_hz,
+    ) {
+        app.state.send(Command::Tune {
+            frequency_hz: target_hz,
+            mode: status.mode,
+            bandwidth_hz: status.bandwidth_hz,
+        });
+    }
 
     ui.add_space(16.0);
     ui.horizontal(|ui| {
@@ -253,6 +334,29 @@ fn rien_a_ecouter(app: &mut super::App, ui: &mut egui::Ui) {
         }
     });
 
+    ui.add_space(16.0);
+    ui.horizontal(|ui| {
+        style::caption(ui, "Accord libre");
+        ui.add_space(10.0);
+        let champ = ui.add(
+            egui::TextEdit::singleline(&mut app.freq_input)
+                .hint_text("Fréquence en kHz (ex. 4625)…")
+                .desired_width(220.0),
+        );
+        let aller = ui.add_sized(vec2(80.0, 28.0), egui::Button::new("Écouter")).clicked();
+        if aller || (champ.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter))) {
+            if let Some(hz) = parse_khz(&app.freq_input) {
+                let res = app
+                    .state
+                    .tune_manual(hz, Mode::Usb, Mode::Usb.default_bandwidth());
+                app.report(res);
+                app.freq_input.clear();
+            } else if !app.freq_input.trim().is_empty() {
+                app.error = Some("fréquence invalide (ex. 4625 ou 6804.5)".into());
+            }
+        }
+    });
+
     ui.add_space(26.0);
     let (rect, _) = ui.allocate_exact_size(
         vec2(ui.available_width(), (ui.available_height() - 40.0).max(80.0)),
@@ -260,4 +364,74 @@ fn rien_a_ecouter(app: &mut super::App, ui: &mut egui::Ui) {
     );
     ui.painter().rect_filled(rect, 0.0, theme::BACKGROUND.egui());
     style::scanlines(ui.painter(), rect);
+}
+
+/// Décale la fréquence en cours de `delta_hz` sans perdre le mode ni le filtre.
+fn nudge_freq(app: &mut super::App, status: &crate::engine::Status, delta_hz: i64) {
+    let target = (i64::from(status.frequency_hz) + delta_hz).clamp(10_000, 1_700_000_000) as u32;
+    app.state.send(Command::Tune {
+        frequency_hz: target,
+        mode: status.mode,
+        bandwidth_hz: status.bandwidth_hz,
+    });
+}
+
+/// Raccourcis clavier de l'écran Écoute : ←/→ accord fin (Shift = ±1 kHz),
+/// R enregistrement, M décodeur Morse, Espace muet.
+fn raccourcis_clavier(app: &mut super::App, ui: &egui::Ui, status: &crate::engine::Status) {
+    if ui.ctx().egui_wants_keyboard_input() {
+        return;
+    }
+    let (left, right, shift, key_r, key_m, space) = ui.input(|i| {
+        (
+            i.key_pressed(egui::Key::ArrowLeft),
+            i.key_pressed(egui::Key::ArrowRight),
+            i.modifiers.shift,
+            i.key_pressed(egui::Key::R),
+            i.key_pressed(egui::Key::M),
+            i.key_pressed(egui::Key::Space),
+        )
+    });
+    let step = if shift { 1_000 } else { 100 };
+    if left {
+        nudge_freq(app, status, -step);
+    }
+    if right {
+        nudge_freq(app, status, step);
+    }
+    if key_r {
+        app.state.toggle_recording();
+    }
+    if key_m {
+        app.state.send(Command::SetMorse(!status.morse_enabled));
+    }
+    if space {
+        let vol = app.state.settings.volume;
+        app.volume_coupe(vol);
+    }
+}
+
+/// Lit une fréquence saisie en kHz (virgule ou point acceptés) et la convertit en Hz.
+pub fn parse_khz(raw: &str) -> Option<u32> {
+    let cleaned = raw.trim().replace([' ', '\u{202f}'], "").replace(',', ".");
+    let khz: f64 = cleaned.parse().ok()?;
+    if !khz.is_finite() || !(10.0..=1_700_000.0).contains(&khz) {
+        return None;
+    }
+    Some((khz * 1_000.0).round() as u32)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::parse_khz;
+
+    #[test]
+    fn la_saisie_de_frequence_accepte_entiers_et_decimales() {
+        assert_eq!(parse_khz("4625"), Some(4_625_000));
+        assert_eq!(parse_khz("6804.5"), Some(6_804_500));
+        assert_eq!(parse_khz("4 625,25"), Some(4_625_250));
+        assert_eq!(parse_khz(""), None);
+        assert_eq!(parse_khz("-50"), None);
+        assert_eq!(parse_khz("abc"), None);
+    }
 }

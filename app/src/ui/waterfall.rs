@@ -6,8 +6,12 @@
 
 use std::collections::VecDeque;
 
-use egui::{Color32, Rect, Sense, Stroke, StrokeKind, TextureHandle, TextureOptions, pos2, vec2};
+use egui::{
+    Align2, Color32, FontFamily, FontId, Rect, Sense, Stroke, StrokeKind, TextureHandle,
+    TextureOptions, pos2, vec2,
+};
 
+use crate::dsp::Mode;
 use crate::format;
 use crate::theme;
 
@@ -107,10 +111,189 @@ impl Waterfall {
         self.texture = None;
     }
 
-    /// Dessine la cascade sur `hauteur` points.
+    /// Dessine la cascade simple sur `hauteur` points (utilisé par l'assistant et Morse).
     pub fn show(&mut self, ui: &mut egui::Ui, hauteur: f32) {
         let largeur = ui.available_width();
         let (rect, _) = ui.allocate_exact_size(vec2(largeur, hauteur), Sense::hover());
+        self.paint_waterfall(ui, rect);
+        // Repère central : la station écoutée est toujours au milieu.
+        ui.painter().vline(
+            rect.center().x,
+            rect.y_range(),
+            Stroke::new(1.0, theme::ACCENT.egui()),
+        );
+        ui.painter().rect_stroke(
+            rect,
+            0.0,
+            Stroke::new(1.0, theme::LINE.egui()),
+            StrokeKind::Inside,
+        );
+    }
+
+    /// Dessine la courbe de spectre + la cascade interactive (bande passante du
+    /// filtre, graduation en kHz, clic pour accorder, molette pour accorder finement).
+    ///
+    /// Renvoie la nouvelle fréquence demandée (en Hz) en cas d'interaction.
+    pub fn show_interactive(
+        &mut self,
+        ui: &mut egui::Ui,
+        hauteur: f32,
+        frequency_hz: u32,
+        sample_rate: u32,
+        mode: Mode,
+        bandwidth_hz: f32,
+    ) -> Option<u32> {
+        let largeur = ui.available_width();
+        let spec_h = (hauteur * 0.24).clamp(44.0, 72.0);
+        let grad_h = 18.0;
+        let wf_h = (hauteur - spec_h - grad_h).max(80.0);
+
+        let (rect, response) =
+            ui.allocate_exact_size(vec2(largeur, spec_h + grad_h + wf_h), Sense::click());
+        let spec_rect = Rect::from_min_size(rect.min, vec2(largeur, spec_h));
+        let grad_rect = Rect::from_min_size(pos2(rect.left(), spec_rect.bottom()), vec2(largeur, grad_h));
+        let wf_rect = Rect::from_min_size(pos2(rect.left(), grad_rect.bottom()), vec2(largeur, wf_h));
+
+        // Largeur spectrale visible : demi-bande d'échantillonnage (480 kHz à 960 kHz).
+        let span_hz = (sample_rate.max(1) as f32) / 2.0;
+
+        // 1. Courbe de spectre temps-réel.
+        ui.painter().rect_filled(spec_rect, 0.0, theme::BACKGROUND.egui());
+        if self.last.len() >= 2 {
+            let n = self.last.len();
+            let points: Vec<egui::Pos2> = (0..WIDTH)
+                .map(|x| {
+                    let level = self.level_at(&self.last, x);
+                    let px = spec_rect.left() + (x as f32 / (WIDTH - 1) as f32) * spec_rect.width();
+                    let py = spec_rect.bottom() - 2.0 - level * (spec_rect.height() - 6.0);
+                    pos2(px, py)
+                })
+                .collect();
+            let _ = n;
+            ui.painter().add(egui::Shape::line(
+                points,
+                Stroke::new(1.0, theme::TEXT_SOFT.egui()),
+            ));
+        } else {
+            super::style::scanlines(ui.painter(), spec_rect);
+        }
+
+        // 2. Graduation en kHz.
+        ui.painter().rect_filled(grad_rect, 0.0, theme::PANEL.egui());
+        let ticks = [-200.0f32, -100.0, 0.0, 100.0, 200.0];
+        let font = FontId::new(10.0, FontFamily::Monospace);
+        for offset_khz in ticks {
+            let frac = 0.5 + (offset_khz * 1_000.0) / span_hz;
+            if !(0.04..=0.96).contains(&frac) {
+                continue;
+            }
+            let x = grad_rect.left() + frac * grad_rect.width();
+            ui.painter().vline(
+                x,
+                grad_rect.top()..=grad_rect.top() + 4.0,
+                Stroke::new(1.0, theme::BORDER.egui()),
+            );
+            let label = if offset_khz == 0.0 {
+                format!("{} kHz", format::khz(frequency_hz / 1_000))
+            } else {
+                format!("{offset_khz:+.0}")
+            };
+            ui.painter().text(
+                pos2(x, grad_rect.center().y + 1.0),
+                Align2::CENTER_CENTER,
+                label,
+                font.clone(),
+                if offset_khz == 0.0 {
+                    theme::TEXT.egui()
+                } else {
+                    theme::MUTED.egui()
+                },
+            );
+        }
+
+        // 3. Cascade défilante.
+        self.paint_waterfall(ui, wf_rect);
+
+        // 4. Bandeau visuel de la bande passante du filtre + repère central.
+        let cx = rect.center().x;
+        let bw_px = ((bandwidth_hz / span_hz) * rect.width()).max(3.0);
+        let (f_left, f_right) = match mode {
+            Mode::Usb => (cx, (cx + bw_px).min(rect.right())),
+            Mode::Lsb => ((cx - bw_px).max(rect.left()), cx),
+            Mode::Am | Mode::Cw | Mode::Nfm => (
+                (cx - bw_px / 2.0).max(rect.left()),
+                (cx + bw_px / 2.0).min(rect.right()),
+            ),
+        };
+        let band_color = Color32::from_rgba_unmultiplied(255, 255, 255, 26);
+        ui.painter().rect_filled(
+            Rect::from_min_max(pos2(f_left, spec_rect.top()), pos2(f_right, spec_rect.bottom())),
+            0.0,
+            band_color,
+        );
+        ui.painter().rect_filled(
+            Rect::from_min_max(pos2(f_left, wf_rect.top()), pos2(f_right, wf_rect.bottom())),
+            0.0,
+            band_color,
+        );
+        ui.painter().vline(cx, spec_rect.y_range(), Stroke::new(1.0, theme::ACCENT.egui()));
+        ui.painter().vline(cx, wf_rect.y_range(), Stroke::new(1.0, theme::ACCENT.egui()));
+
+        // Bordures.
+        ui.painter().rect_stroke(
+            spec_rect,
+            0.0,
+            Stroke::new(1.0, theme::LINE.egui()),
+            StrokeKind::Inside,
+        );
+        ui.painter().rect_stroke(
+            wf_rect,
+            0.0,
+            Stroke::new(1.0, theme::LINE.egui()),
+            StrokeKind::Inside,
+        );
+
+        // 5. Survol, clic (accord direct) et molette (accord fin).
+        let mut requested: Option<u32> = None;
+        if let Some(hover) = response.hover_pos() {
+            ui.ctx().set_cursor_icon(egui::CursorIcon::Crosshair);
+            let frac = ((hover.x - rect.left()) / rect.width()).clamp(0.0, 1.0) - 0.5;
+            let delta_hz = (frac * span_hz).round() as i64;
+            let target_hz = (i64::from(frequency_hz) + delta_hz).clamp(10_000, 1_700_000_000) as u32;
+
+            // Filet de visée + étiquette de fréquence sous le curseur.
+            ui.painter().vline(
+                hover.x,
+                wf_rect.y_range(),
+                Stroke::new(1.0, Color32::from_rgba_unmultiplied(255, 255, 255, 90)),
+            );
+            let tip = format!("{} kHz", format::tuned(target_hz));
+            let tip_x = hover.x.clamp(wf_rect.left() + 56.0, wf_rect.right() - 56.0);
+            ui.painter().text(
+                pos2(tip_x, wf_rect.top() + 10.0),
+                Align2::CENTER_CENTER,
+                tip,
+                FontId::new(11.0, FontFamily::Monospace),
+                theme::ACCENT.egui(),
+            );
+
+            if response.clicked() {
+                requested = Some(target_hz);
+            }
+
+            let scroll_y = ui.input(|i| i.smooth_scroll_delta.y);
+            if scroll_y.abs() > 1.0 {
+                let shift = ui.input(|i| i.modifiers.shift);
+                let step: i64 = if shift { 1_000 } else { 100 };
+                let dir: i64 = if scroll_y > 0.0 { 1 } else { -1 };
+                let next = (i64::from(frequency_hz) + dir * step).clamp(10_000, 1_700_000_000) as u32;
+                requested = Some(next);
+            }
+        }
+        requested
+    }
+
+    fn paint_waterfall(&mut self, ui: &mut egui::Ui, rect: Rect) {
         ui.painter().rect_filled(rect, 0.0, theme::BACKGROUND.egui());
 
         if !self.lines.is_empty() {
@@ -138,19 +321,6 @@ impl Waterfall {
         } else {
             super::style::scanlines(ui.painter(), rect);
         }
-
-        // Repère central : la station écoutée est toujours au milieu.
-        ui.painter().vline(
-            rect.center().x,
-            rect.y_range(),
-            Stroke::new(1.0, theme::ACCENT.egui()),
-        );
-        ui.painter().rect_stroke(
-            rect,
-            0.0,
-            Stroke::new(1.0, theme::LINE.egui()),
-            StrokeKind::Inside,
-        );
     }
 
 }

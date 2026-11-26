@@ -25,6 +25,18 @@ use crate::settings::{self, Settings, SourceChoice};
 /// Horizon du planning affiché.
 const UPCOMING_HOURS: i64 = 24;
 
+/// Durée par défaut d'un enregistrement programmé, en minutes.
+pub const DEFAULT_SCHEDULE_MINS: u32 = 15;
+
+/// Enregistrement programmé sur un créneau du planning.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct ScheduledRecording {
+    pub station: String,
+    pub start: DateTime<Utc>,
+    pub duration_mins: u32,
+    pub started: bool,
+}
+
 /// Résultat d'une actualisation lancée en arrière-plan.
 enum Refreshed {
     Planning(Result<Vec<Transmission>>),
@@ -64,6 +76,10 @@ pub struct AppState {
     pub last_refresh: Option<DateTime<Utc>>,
     /// Stations repérées à l'agenda et absentes du catalogue.
     pub discovered: Vec<String>,
+    /// Enregistrements programmés sur le planning.
+    pub scheduled: Vec<ScheduledRecording>,
+    /// Alerte lorsqu'une station suivie ou programmée démarre bientôt.
+    pub alert: Option<String>,
     pub message: String,
     pub demo: bool,
     inbox: Option<Receiver<Refreshed>>,
@@ -92,6 +108,8 @@ impl AppState {
             live: Vec::new(),
             last_refresh: None,
             discovered: Vec::new(),
+            scheduled: Vec::new(),
+            alert: None,
             message: String::new(),
             demo,
             inbox: None,
@@ -398,6 +416,130 @@ impl AppState {
                 }
             }
         }
+
+        self.check_schedule(Utc::now());
+    }
+
+    /// Programme ou annule un enregistrement automatique pour un créneau donné.
+    /// Renvoie `true` si l'enregistrement est désormais programmé.
+    pub fn toggle_schedule(
+        &mut self,
+        station_id: &str,
+        start: DateTime<Utc>,
+        duration_mins: u32,
+    ) -> bool {
+        if let Some(pos) = self
+            .scheduled
+            .iter()
+            .position(|s| s.station == station_id && s.start == start)
+        {
+            self.scheduled.remove(pos);
+            self.message = format!("programmation annulée : {station_id}");
+            false
+        } else {
+            self.scheduled.push(ScheduledRecording {
+                station: station_id.to_string(),
+                start,
+                duration_mins: duration_mins.max(1),
+                started: false,
+            });
+            self.scheduled.sort_by_key(|s| s.start);
+            self.message = format!(
+                "enregistrement programmé : {station_id} à {} UTC ({duration_mins} min)",
+                start.format("%H:%M")
+            );
+            true
+        }
+    }
+
+    pub fn is_scheduled(&self, station_id: &str, start: DateTime<Utc>) -> bool {
+        self.scheduled
+            .iter()
+            .any(|s| s.station == station_id && s.start == start)
+    }
+
+    /// Déclenche les enregistrements programmés à l'heure dite, les arrête à
+    /// l'échéance et met à jour l'alerte d'émission imminente (≤ 2 min).
+    pub fn check_schedule(&mut self, now: DateTime<Utc>) {
+        // 1. Démarrer les enregistrements dont l'heure est arrivée.
+        let mut to_start: Vec<usize> = Vec::new();
+        let mut to_stop: Vec<usize> = Vec::new();
+        let mut expired: Vec<usize> = Vec::new();
+        for (idx, job) in self.scheduled.iter().enumerate() {
+            let end = job.start + TimeDelta::minutes(i64::from(job.duration_mins));
+            if job.started && now >= end {
+                to_stop.push(idx);
+            } else if !job.started && now >= job.start && now < end {
+                to_start.push(idx);
+            } else if !job.started && now >= end {
+                expired.push(idx);
+            }
+        }
+
+        for idx in to_start {
+            let station = self.scheduled[idx].station.clone();
+            match self.listen(&station) {
+                Ok(()) => {
+                    self.send(Command::StartRecording {
+                        dir: self.settings.recordings(),
+                        station: station.clone(),
+                    });
+                    self.scheduled[idx].started = true;
+                    self.message = format!("enregistrement programmé démarré : {station}");
+                }
+                Err(err) => {
+                    self.message = format!("enregistrement programmé ({station}) : {err:#}");
+                }
+            }
+        }
+
+        let mut remove = to_stop.clone();
+        remove.extend(expired);
+        remove.sort_unstable();
+        remove.dedup();
+        for idx in remove.into_iter().rev() {
+            let job = self.scheduled.remove(idx);
+            if job.started {
+                self.send(Command::StopRecording);
+                self.message = format!("enregistrement programmé terminé : {}", job.station);
+            }
+        }
+
+        // 2. Alerte d'émission imminente (dans les 2 prochaines minutes) pour
+        //    les stations programmées ou mises en signet.
+        let horizon = now + TimeDelta::minutes(2);
+        let mut next_alert: Option<(DateTime<Utc>, String)> = None;
+
+        for job in &self.scheduled {
+            if !job.started && job.start > now && job.start <= horizon {
+                next_alert = Some((job.start, job.station.clone()));
+                break;
+            }
+        }
+        if next_alert.is_none() {
+            for id in &self.settings.bookmarks {
+                if let Some(station) = self.catalog.station(id) {
+                    if let Some(at) = station
+                        .slots
+                        .iter()
+                        .filter_map(|slot| slot.next_after(now))
+                        .min()
+                        && at > now
+                        && at <= horizon
+                    {
+                        next_alert = Some((at, station.id.clone()));
+                        break;
+                    }
+                }
+            }
+        }
+        self.alert = next_alert.map(|(at, id)| {
+            let mins = ((at - now).num_seconds() + 59) / 60;
+            format!(
+                "Émission imminente : {id} dans {mins} min ({} UTC)",
+                at.format("%H:%M")
+            )
+        });
     }
 
     pub fn is_refreshing(&self) -> bool {
@@ -697,5 +839,47 @@ mod tests {
         let apres = state.rows(Utc::now())[0].id.clone();
         assert_eq!(apres, "M12");
         assert_ne!(avant, apres);
+    }
+
+    #[test]
+    fn l_enregistrement_programme_alerte_demarre_et_s_arrete() {
+        let (mut state, _verrou) = etat("programme");
+        let start = Utc::now() + TimeDelta::seconds(90);
+        assert!(state.toggle_schedule("S28", start, 10));
+        assert!(state.is_scheduled("S28", start));
+
+        // 90 s avant le début : une alerte imminente est levée.
+        state.check_schedule(start - TimeDelta::seconds(90));
+        assert!(
+            state
+                .alert
+                .as_deref()
+                .map(|a| a.contains("S28"))
+                .unwrap_or(false),
+            "alerte manquante : {:?}",
+            state.alert
+        );
+
+        // À l'heure pile : écoute + enregistrement démarrent tout seuls.
+        state.check_schedule(start);
+        assert!(state.scheduled[0].started);
+        assert_eq!(
+            state.session.as_ref().map(|s| s.station.as_str()),
+            Some("S28")
+        );
+        let mut rec = false;
+        for _ in 0..50 {
+            if state.status().and_then(|s| s.recording).is_some() {
+                rec = true;
+                break;
+            }
+            std::thread::sleep(std::time::Duration::from_millis(20));
+        }
+        assert!(rec, "l'enregistrement programmé n'a pas démarré");
+
+        // Après la durée prévue : l'enregistrement s'arrête et la tâche est retirée.
+        state.check_schedule(start + TimeDelta::minutes(11));
+        assert!(state.scheduled.is_empty());
+        state.stop();
     }
 }

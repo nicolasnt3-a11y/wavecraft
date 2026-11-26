@@ -59,7 +59,7 @@ jobs:
                      Select-Object -First 1).FullName $paquet/
           Copy-Item tiers/zadig.exe "$paquet/pilote/zadig.exe"
           Copy-Item packaging/windows/Installer-Wavecraft.cmd, packaging/windows/installer.ps1 $paquet/
-          Copy-Item site/assets/img/wavecraft.ico $paquet/
+          Copy-Item app/assets/wavecraft.ico $paquet/
           Copy-Item README.md, LICENSE, THIRD_PARTY.md $paquet/
           Compress-Archive -Path $paquet -DestinationPath "$paquet.zip"
 
