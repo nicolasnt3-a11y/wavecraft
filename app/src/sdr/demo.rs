@@ -15,7 +15,9 @@ use anyhow::Result;
 use super::{Gain, Source};
 
 /// Décalage de la station par rapport au centre, en Hz.
-const OFFSET_HZ: f32 = 15_000.0;
+/// Correspond à [`crate::engine::TUNING_OFFSET_HZ`] pour que la station de
+/// démonstration tombe exactement sur la fréquence écoutée et au centre de la cascade.
+const OFFSET_HZ: f32 = crate::engine::TUNING_OFFSET_HZ as f32;
 
 /// Vitesse du Morse, en points par seconde (environ 12 mots/minute).
 const DOT_PER_SEC: f32 = 10.0;
@@ -157,7 +159,10 @@ impl Source for Demo {
         let step = TAU * OFFSET_HZ / self.sample_rate as f32;
         for pair in out.chunks_exact_mut(2) {
             let seconds = self.clock as f32 / self.sample_rate as f32;
-            let amplitude = self.envelope(seconds);
+            // Porteuse modulée par une tonalité audible (700 Hz) : audible aussi
+            // bien en CW (porteuse) qu'en USB/LSB/AM (bandes latérales).
+            let tone = (TAU * crate::dsp::CW_PITCH_HZ * seconds).cos();
+            let amplitude = self.envelope(seconds) * (0.65 + 0.35 * tone);
             let (sin, cos) = self.phase.sin_cos();
             self.phase = (self.phase + step) % TAU;
 

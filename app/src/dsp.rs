@@ -276,6 +276,7 @@ impl Agc {
 pub struct Demodulator {
     mode: Mode,
     bandwidth_hz: f32,
+    offset_hz: f32,
     sample_rate: f32,
     audio_rate: f32,
     nco: Nco,
@@ -299,6 +300,7 @@ impl Demodulator {
         let mut demod = Self {
             mode,
             bandwidth_hz,
+            offset_hz: 0.0,
             sample_rate,
             audio_rate,
             nco: Nco::new(0.0, sample_rate),
@@ -309,6 +311,7 @@ impl Demodulator {
             dc: 0.0,
             level_dbfs: -120.0,
         };
+        demod.update_nco();
         demod.rebuild_mode_filter();
         demod
     }
@@ -318,15 +321,28 @@ impl Demodulator {
     /// La clé n'est jamais accordée pile sur la station : son oscillateur
     /// laisse un pic parasite au centre du spectre, qui gâcherait l'écoute.
     pub fn set_offset(&mut self, offset_hz: f32) {
-        self.nco.set_freq(-offset_hz, self.sample_rate);
+        self.offset_hz = offset_hz;
+        self.update_nco();
     }
 
     pub fn set_mode(&mut self, mode: Mode) {
         if self.mode != mode {
             self.mode = mode;
             self.bandwidth_hz = mode.default_bandwidth();
+            self.update_nco();
             self.rebuild_mode_filter();
         }
+    }
+
+    /// Met à jour l'oscillateur local : en Morse, la porteuse accordée pile
+    /// est décalée de [`CW_PITCH_HZ`] pour produire une note audible.
+    fn update_nco(&mut self) {
+        let bfo = if self.mode == Mode::Cw {
+            CW_PITCH_HZ
+        } else {
+            0.0
+        };
+        self.nco.set_freq(-self.offset_hz + bfo, self.sample_rate);
     }
 
     pub fn set_bandwidth(&mut self, bandwidth_hz: f32) {
@@ -502,10 +518,26 @@ mod tests {
     #[test]
     fn le_morse_produit_une_note_audible() {
         let sample_rate = DEFAULT_SAMPLE_RATE;
-        // En Morse, la station est accordée pile : le décalage de note doit
-        // produire un sifflement à CW_PITCH_HZ.
-        let input = carrier(CW_PITCH_HZ, sample_rate as f32, 200_000, 0.5);
+        // En Morse, la station est accordée pile (0 Hz après décalage) : le
+        // décalage de note doit produire un sifflement à CW_PITCH_HZ.
+        let input = carrier(0.0, sample_rate as f32, 200_000, 0.5);
         let mut demod = Demodulator::new(Mode::Cw, 500.0, sample_rate);
+        let mut audio = Vec::new();
+        demod.process(&input, &mut audio);
+        let freq = dominant_freq(&audio, AUDIO_RATE as f32);
+        assert!(
+            (freq - CW_PITCH_HZ).abs() < 60.0,
+            "note Morse attendue à {CW_PITCH_HZ} Hz, obtenue à {freq:.0} Hz"
+        );
+    }
+
+    #[test]
+    fn le_morse_avec_decalage_de_cle_produit_une_note_audible() {
+        let sample_rate = DEFAULT_SAMPLE_RATE;
+        let offset = 250_000.0;
+        let input = carrier(offset, sample_rate as f32, 200_000, 0.5);
+        let mut demod = Demodulator::new(Mode::Cw, 500.0, sample_rate);
+        demod.set_offset(offset);
         let mut audio = Vec::new();
         demod.process(&input, &mut audio);
         let freq = dominant_freq(&audio, AUDIO_RATE as f32);

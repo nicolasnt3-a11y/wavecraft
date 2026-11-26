@@ -77,20 +77,29 @@ impl AudioSink {
     }
 
     /// Remplit `out` pour la carte son. Le silence comble les manques.
+    #[cfg(test)]
     pub fn fill(&self, out: &mut [f32]) {
+        self.fill_interleaved(out, 1);
+    }
+
+    /// Remplit `out` en recopiant chaque échantillon mono sur `channels` voies.
+    /// Évite toute allocation dans le fil audio temps-réel.
+    pub fn fill_interleaved(&self, out: &mut [f32], channels: usize) {
+        let channels = channels.max(1);
         let Ok(mut inner) = self.inner.lock() else {
             out.fill(0.0);
             return;
         };
         let volume = inner.volume;
-        for slot in out.iter_mut() {
-            match inner.samples.pop_front() {
-                Some(sample) => *slot = sample * volume,
+        for frame in out.chunks_mut(channels) {
+            let sample = match inner.samples.pop_front() {
+                Some(sample) => sample * volume,
                 None => {
-                    *slot = 0.0;
                     inner.starved += 1;
+                    0.0
                 }
-            }
+            };
+            frame.fill(sample);
         }
     }
 
@@ -179,13 +188,8 @@ pub mod output {
                     config.config(),
                     move |data: &mut [f32], _| {
                         // L'audio est monophonique : le même échantillon part
-                        // sur toutes les voies.
-                        let frames = data.len() / channels;
-                        let mut mono = vec![0.0f32; frames];
-                        sink.fill(&mut mono);
-                        for (frame, &sample) in data.chunks_mut(channels).zip(mono.iter()) {
-                            frame.fill(sample);
-                        }
+                        // sur toutes les voies, sans allocation dans le fil audio.
+                        sink.fill_interleaved(data, channels);
                     },
                     move |err| eprintln!("sortie audio : {err}"),
                     None,
@@ -280,5 +284,20 @@ mod tests {
         let fil = std::thread::spawn(move || copie.push(&[0.25; 100]));
         fil.join().unwrap();
         assert_eq!(sink.pending(), 100);
+    }
+
+    #[test]
+    fn le_remplissage_entrelace_copie_sur_toutes_les_voies() {
+        let sink = AudioSink::new(AUDIO_RATE);
+        sink.set_volume(1.0);
+        sink.push(&[0.2, 0.8]);
+        let mut stereo = [0.0; 6];
+        sink.fill_interleaved(&mut stereo, 2);
+        assert!((stereo[0] - 0.2).abs() < 1e-6);
+        assert!((stereo[1] - 0.2).abs() < 1e-6);
+        assert!((stereo[2] - 0.8).abs() < 1e-6);
+        assert!((stereo[3] - 0.8).abs() < 1e-6);
+        assert_eq!(stereo[4], 0.0);
+        assert_eq!(stereo[5], 0.0);
     }
 }

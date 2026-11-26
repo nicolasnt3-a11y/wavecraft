@@ -84,12 +84,43 @@ struct Etat {
     link: Link,
     ring: Arc<Mutex<Ring>>,
     password: Option<String>,
+    /// Jeton aléatoire déposé dans le biscuit de session (jamais le mot de passe en clair).
+    session_token: Option<String>,
+}
+
+/// Génère un jeton de session aléatoire (32 chiffres hexadécimaux) à partir
+/// des clés aléatoires fournies par le système à `RandomState`.
+fn generer_jeton() -> String {
+    use std::collections::hash_map::RandomState;
+    use std::hash::{BuildHasher, Hasher};
+
+    let mut h1 = RandomState::new().build_hasher();
+    let mut h2 = RandomState::new().build_hasher();
+    let now = std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .map(|d| d.as_nanos())
+        .unwrap_or(0);
+    h1.write_u128(now);
+    h1.write_u32(std::process::id());
+    h2.write_u128(now.wrapping_add(1));
+    h2.write_u32(std::process::id());
+    format!("{:016x}{:016x}", h1.finish(), h2.finish())
 }
 
 impl Etat {
+    fn new(link: Link, ring: Arc<Mutex<Ring>>, password: Option<String>) -> Self {
+        let session_token = password.as_ref().map(|_| generer_jeton());
+        Self {
+            link,
+            ring,
+            password,
+            session_token,
+        }
+    }
+
     /// Le navigateur a-t-il le droit d'entrer ?
     fn autorise(&self, headers: &HeaderMap) -> bool {
-        let Some(attendu) = &self.password else {
+        let Some(attendu) = &self.session_token else {
             return true;
         };
         let Some(biscuits) = headers.get(header::COOKIE).and_then(|v| v.to_str().ok()) else {
@@ -128,11 +159,11 @@ impl Handle {
             .block_on(tokio::net::TcpListener::bind(adresse))
             .with_context(|| format!("le port {port} n'est pas disponible"))?;
 
-        let etat = Etat {
-            link: link.clone(),
-            ring: Arc::new(Mutex::new(Ring::new())),
+        let etat = Etat::new(
+            link.clone(),
+            Arc::new(Mutex::new(Ring::new())),
             password,
-        };
+        );
         let arret = Arc::new(AtomicBool::new(false));
 
         // Recopie du son dans le tampon, dix fois par seconde.
@@ -253,15 +284,16 @@ async fn entrer(State(etat): State<Etat>, corps: String) -> Response {
         .map(|(_, valeur)| decode(valeur))
         .unwrap_or_default();
 
-    match &etat.password {
-        Some(attendu) if &saisi == attendu => {
+    match (&etat.password, &etat.session_token) {
+        (Some(attendu), Some(jeton)) if &saisi == attendu => {
             let mut headers = HeaderMap::new();
-            // Le biscuit ne quitte pas le site et n'est pas lisible en script.
+            // Le biscuit transporte un jeton de session aléatoire, jamais le
+            // mot de passe en clair, et n'est pas lisible en script.
             headers.insert(
                 header::SET_COOKIE,
                 format!(
                     "{COOKIE}={}; HttpOnly; SameSite=Strict; Path=/",
-                    encode(&saisi)
+                    encode(jeton)
                 )
                 .parse()
                 .expect("en-tête de biscuit valide"),
@@ -381,10 +413,25 @@ async fn api_etat(State(etat): State<Etat>, headers: HeaderMap) -> Response {
 }
 
 /// Spectre ramené à 256 points et à des entiers de 0 à 255 : la cascade du
-/// navigateur n'a pas besoin de plus, et la page reste légère.
+/// navigateur n'a pas besoin de plus, et la page reste légère. L'échelle
+/// s'adapte au bruit de fond reçu, comme sur l'interface bureau.
 fn spectre(brut: &[f32]) -> Vec<u8> {
     if brut.is_empty() {
         return Vec::new();
+    }
+    let (mut floor_db, mut ceiling_db) = (-110.0f32, -20.0f32);
+    let mut tri: Vec<f32> = brut.iter().copied().filter(|v| v.is_finite()).collect();
+    if tri.len() >= 8 {
+        let rang = |tri: &mut Vec<f32>, part: f32| -> f32 {
+            let index = ((tri.len() - 1) as f32 * part) as usize;
+            *tri.select_nth_unstable_by(index, f32::total_cmp).1
+        };
+        let bas = rang(&mut tri, 0.5) + 2.0;
+        let haut = rang(&mut tri, 0.995) + 8.0;
+        if haut - bas >= 12.0 {
+            floor_db = bas;
+            ceiling_db = haut;
+        }
     }
     (0..256)
         .map(|x| {
@@ -394,7 +441,7 @@ fn spectre(brut: &[f32]) -> Vec<u8> {
                 .iter()
                 .copied()
                 .fold(f32::NEG_INFINITY, f32::max);
-            (crate::theme::normalize_db(db, -110.0, -20.0) * 255.0) as u8
+            (crate::theme::normalize_db(db, floor_db, ceiling_db) * 255.0) as u8
         })
         .collect()
 }
@@ -613,26 +660,29 @@ mod tests {
     }
 
     #[test]
-    fn le_mot_de_passe_est_verifie_dans_le_biscuit() {
-        let etat = Etat {
-            link: Link::new(),
-            ring: Arc::new(Mutex::new(Ring::new())),
-            password: Some("sésame".into()),
-        };
+    fn le_jeton_de_session_est_verifie_dans_le_biscuit() {
+        let etat = Etat::new(
+            Link::new(),
+            Arc::new(Mutex::new(Ring::new())),
+            Some("sésame".into()),
+        );
+        let jeton = etat.session_token.clone().expect("jeton généré");
+        assert_ne!(jeton, "sésame", "le jeton ne doit pas être le mot de passe");
+
         let mut headers = HeaderMap::new();
         assert!(!etat.autorise(&headers), "sans biscuit, l'accès est refusé");
-        headers.insert(header::COOKIE, "wavecraft=rate".parse().unwrap());
+        // Le mot de passe en clair dans le biscuit ne doit pas suffire.
+        headers.insert(
+            header::COOKIE,
+            format!("wavecraft={}", encode("sésame")).parse().unwrap(),
+        );
         assert!(!etat.autorise(&headers));
-        // Le mot de passe voyage pour-cent-encodé : un en-tête HTTP n'accepte
-        // pas les accents tels quels.
-        let biscuit = format!("autre=1; wavecraft={}", encode("sésame"));
+        // Le jeton de session donne l'accès.
+        let biscuit = format!("autre=1; wavecraft={}", encode(&jeton));
         headers.insert(header::COOKIE, biscuit.parse().unwrap());
         assert!(etat.autorise(&headers));
 
-        let libre = Etat {
-            password: None,
-            ..etat
-        };
+        let libre = Etat::new(Link::new(), Arc::new(Mutex::new(Ring::new())), None);
         assert!(libre.autorise(&HeaderMap::new()), "sans mot de passe, accès libre");
     }
 }

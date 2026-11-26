@@ -32,7 +32,7 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
         entête.push(nom);
     }
     entête.push(status.mode.label().to_string());
-    entête.push(format!("{:.0} kHz", status.bandwidth_hz / 1_000.0));
+    entête.push(format::bandwidth(status.bandwidth_hz));
     style::caption(ui, &entête.join(" · "));
 
     // La fréquence, en très grand : c'est le chiffre qu'on cherche des yeux.
@@ -51,7 +51,12 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
     });
 
     ui.add_space(14.0);
-    let hauteur = (ui.available_height() - 150.0).clamp(160.0, 430.0);
+    let reserve = if app.state.settings.expert {
+        235.0
+    } else {
+        190.0
+    };
+    let hauteur = (ui.available_height() - reserve).clamp(160.0, 430.0);
     app.waterfall.show(ui, hauteur);
 
     ui.add_space(16.0);
@@ -78,12 +83,6 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
 
 /// Mode, filtre, volume et arrêt — puis les réglages fins en mode Expert.
 fn commandes(app: &mut super::App, ui: &mut egui::Ui, mode: Mode, bande: f32) {
-    let frequence = app
-        .state
-        .status()
-        .map(|s| s.frequency_hz)
-        .unwrap_or_default();
-
     ui.horizontal(|ui| {
         for choix in [Mode::Usb, Mode::Lsb, Mode::Am, Mode::Cw, Mode::Nfm] {
             let actif = choix == mode;
@@ -98,12 +97,9 @@ fn commandes(app: &mut super::App, ui: &mut egui::Ui, mode: Mode, bande: f32) {
                 theme::BACKGROUND.egui()
             });
             if ui.add_sized(vec2(54.0, 28.0), bouton).clicked() {
-                // Changer de mode remet la largeur de filtre habituelle du mode.
-                app.state.send(Command::Tune {
-                    frequency_hz: frequence,
-                    mode: choix,
-                    bandwidth_hz: choix.default_bandwidth(),
-                });
+                // Changer de mode remet la largeur de filtre habituelle du mode
+                // sans réaccorder la clé ni couper l'audio.
+                app.state.send(Command::SetMode(choix));
             }
         }
 
@@ -118,16 +114,12 @@ fn commandes(app: &mut super::App, ui: &mut egui::Ui, mode: Mode, bande: f32) {
             .step_by(100.0);
         let bougé = ui.add(glissiere).changed();
         ui.label(
-            RichText::new(format!("{:.1} kHz", largeur / 1_000.0))
+            RichText::new(format::bandwidth(largeur))
                 .size(12.0)
                 .color(theme::TEXT_SOFT.egui()),
         );
         if bougé {
-            app.state.send(Command::Tune {
-                frequency_hz: frequence,
-                mode,
-                bandwidth_hz: largeur,
-            });
+            app.state.send(Command::SetBandwidth(largeur));
         }
     });
 
@@ -213,13 +205,21 @@ fn expert(app: &mut super::App, ui: &mut egui::Ui) {
         }
 
         ui.add_space(18.0);
-        let mut morse = app
+        let mut bias_tee = app
             .state
             .status()
-            .map(|s| s.morse_enabled)
+            .map(|s| s.bias_tee)
             .unwrap_or(false);
-        if ui.checkbox(&mut morse, "Décodage Morse").changed() {
-            app.state.send(crate::engine::Command::SetMorse(morse));
+        if ui
+            .checkbox(&mut bias_tee, "Alimentation d'antenne (bias-tee)")
+            .changed()
+        {
+            app.state.send(crate::engine::Command::SetBiasTee(bias_tee));
+            app.state.message = if bias_tee {
+                "alimentation d'antenne activée".into()
+            } else {
+                "alimentation d'antenne coupée".into()
+            };
         }
     });
 }

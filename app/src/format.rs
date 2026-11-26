@@ -48,6 +48,15 @@ pub fn tuned(frequency_hz: u32) -> String {
     format!("{}.{:03}", khz(frequency_hz / 1_000), frequency_hz % 1_000)
 }
 
+/// Largeur de filtre lisible : « 500 Hz », « 2.7 kHz ».
+pub fn bandwidth(hz: f32) -> String {
+    if hz < 1_000.0 {
+        format!("{:.0} Hz", hz.max(0.0))
+    } else {
+        format!("{:.1} kHz", hz / 1_000.0)
+    }
+}
+
 /// Quand une station est-elle écoutable ?
 ///
 /// `next` est l'heure de la prochaine émission annoncée, `continuous` indique
@@ -197,5 +206,12 @@ mod tests {
     #[test]
     fn l_horodatage_du_journal_est_en_utc() {
         assert_eq!(stamp(instant(9, 21, 0)), "2026-11-09 21:00");
+    }
+
+    #[test]
+    fn la_largeur_de_filtre_reste_lisible() {
+        assert_eq!(bandwidth(500.0), "500 Hz");
+        assert_eq!(bandwidth(2_700.0), "2.7 kHz");
+        assert_eq!(bandwidth(6_000.0), "6.0 kHz");
     }
 }

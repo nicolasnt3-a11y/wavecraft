@@ -50,6 +50,10 @@ pub enum Command {
         mode: Mode,
         bandwidth_hz: f32,
     },
+    /// Change de mode sans réaccorder la clé ni couper le son.
+    SetMode(Mode),
+    /// Change la largeur du filtre sans réaccorder la clé ni effacer le Morse.
+    SetBandwidth(f32),
     SetGain(Gain),
     SetPpm(i32),
     SetBiasTee(bool),
@@ -88,6 +92,7 @@ pub struct Status {
     pub morse_pitch_hz: f32,
     pub recording: Option<PathBuf>,
     pub recorded_secs: f64,
+    pub bias_tee: bool,
     /// Dernière erreur rencontrée par le fil de réception.
     pub error: Option<String>,
 }
@@ -111,6 +116,7 @@ impl Default for Status {
             morse_pitch_hz: crate::dsp::CW_PITCH_HZ,
             recording: None,
             recorded_secs: 0.0,
+            bias_tee: false,
             error: None,
         }
     }
@@ -350,7 +356,7 @@ impl Worker {
         Ok(true)
     }
 
-    /// Puissance par canal, en dB, sur la largeur reçue.
+    /// Puissance par canal, en dB, centrée sur la fréquence écoutée.
     fn spectrum(&mut self) -> Vec<f32> {
         if self.iq.len() < SPECTRUM_BINS {
             return vec![-120.0; SPECTRUM_BINS / 2];
@@ -363,14 +369,24 @@ impl Worker {
         self.fft.process(&mut buffer);
 
         // Le spectre d'un signal complexe est rangé par rustfft de 0 à +Fe/2
-        // puis de -Fe/2 à 0 : on le remet dans l'ordre des fréquences.
+        // puis de -Fe/2 à 0. On découpe une fenêtre d'une demi-bande centrée
+        // sur la station écoutée (et non sur le centre de la clé, qui porte le
+        // pic DC) : le repère central de la cascade tombe ainsi pile dessus.
+        let n = SPECTRUM_BINS as isize;
         let half = SPECTRUM_BINS / 2;
+        let sample_rate = self.source.sample_rate().max(1) as f64;
+        let offset_hz = if self.frequency_hz > 0 {
+            i64::from(self.frequency_hz) - i64::from(self.source.center_freq())
+        } else {
+            0
+        };
+        let center_bin = ((offset_hz as f64 / sample_rate) * SPECTRUM_BINS as f64).round() as isize;
+        let start_bin = center_bin - (half as isize) / 2;
+
         let scale = 1.0 / SPECTRUM_BINS as f32;
         let mut out = Vec::with_capacity(half);
         for index in 0..half {
-            // Un canal sur deux, pour une cascade deux fois moins large que la
-            // transformée : l'affichage reste lisible.
-            let source = (index + half + half / 2) % SPECTRUM_BINS;
+            let source = (start_bin + index as isize).rem_euclid(n) as usize;
             let value = buffer[source] * scale;
             let power = value.norm_sqr().max(1e-20);
             out.push(10.0 * power.log10());
@@ -385,9 +401,27 @@ impl Worker {
                 mode,
                 bandwidth_hz,
             } => self.tune(frequency_hz, mode, bandwidth_hz)?,
+            Command::SetMode(mode) => {
+                self.demodulator.set_mode(mode);
+                let bandwidth = self.demodulator.bandwidth();
+                self.with_status(move |s| {
+                    s.mode = mode;
+                    s.bandwidth_hz = bandwidth;
+                });
+            }
+            Command::SetBandwidth(bandwidth_hz) => {
+                self.demodulator.set_bandwidth(bandwidth_hz);
+                let bandwidth = self.demodulator.bandwidth();
+                self.with_status(move |s| {
+                    s.bandwidth_hz = bandwidth;
+                });
+            }
             Command::SetGain(gain) => self.source.set_gain(gain)?,
             Command::SetPpm(ppm) => self.source.set_ppm(ppm)?,
-            Command::SetBiasTee(on) => self.source.set_bias_tee(on)?,
+            Command::SetBiasTee(on) => {
+                self.source.set_bias_tee(on)?;
+                self.with_status(move |s| s.bias_tee = on);
+            }
             Command::SetMorse(on) => {
                 self.morse_enabled = on;
                 self.with_status(|s| s.morse_enabled = on);
@@ -554,6 +588,51 @@ mod tests {
         engine.tune(4_625_000, Mode::Cw, 500.0);
         let status = attendre(&engine, Duration::from_secs(3), |s| s.morse_enabled);
         assert!(status.morse_enabled);
+        engine.stop();
+    }
+
+    #[test]
+    fn la_cascade_est_centree_sur_la_station_ecoutee() {
+        let engine = Engine::start(Box::new(Demo::new())).unwrap();
+        engine.tune(4_625_000, Mode::Usb, 2_700.0);
+        let status = attendre(&engine, Duration::from_secs(5), |s| {
+            s.frequency_hz == 4_625_000 && s.spectrum.iter().any(|&v| v > -60.0)
+        });
+        let (pic, _) = status
+            .spectrum
+            .iter()
+            .enumerate()
+            .max_by(|a, b| a.1.total_cmp(b.1))
+            .expect("spectre vide");
+        let centre = status.spectrum.len() / 2;
+        assert!(
+            (pic as isize - centre as isize).abs() <= 4,
+            "la porteuse de démonstration est au canal {pic} au lieu du centre {centre}"
+        );
+        engine.stop();
+    }
+
+    #[test]
+    fn changer_de_filtre_ou_de_mode_ne_reaccorde_pas() {
+        let engine = Engine::start(Box::new(Demo::new())).unwrap();
+        engine.tune(4_625_000, Mode::Usb, 2_700.0);
+        attendre(&engine, Duration::from_secs(5), |s| s.frequency_hz == 4_625_000);
+
+        engine.send(Command::SetBandwidth(1_800.0));
+        let status = attendre(&engine, Duration::from_secs(3), |s| {
+            (s.bandwidth_hz - 1_800.0).abs() < 1.0
+        });
+        assert_eq!(status.mode, Mode::Usb);
+        assert_eq!(status.frequency_hz, 4_625_000);
+
+        engine.send(Command::SetMode(Mode::Cw));
+        let status = attendre(&engine, Duration::from_secs(3), |s| s.mode == Mode::Cw);
+        assert_eq!(status.bandwidth_hz, Mode::Cw.default_bandwidth());
+        assert_eq!(status.frequency_hz, 4_625_000);
+
+        engine.send(Command::SetBiasTee(true));
+        let status = attendre(&engine, Duration::from_secs(3), |s| s.bias_tee);
+        assert!(status.bias_tee);
         engine.stop();
     }
 
