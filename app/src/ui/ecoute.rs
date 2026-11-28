@@ -42,7 +42,7 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
         if presets.len() > 1 {
             ui.add_space(16.0);
             for preset in presets.iter().take(5) {
-                let active = (status.frequency_hz / 1_000) == preset.frequency_khz;
+                let active = status.frequency_hz == preset.frequency_khz * 1_000;
                 let label = format!("{} kHz", format::khz(preset.frequency_khz));
                 let btn = egui::Button::new(
                     RichText::new(label)
@@ -60,13 +60,41 @@ pub fn show(app: &mut super::App, ui: &mut egui::Ui) {
                 });
                 if ui.add_sized(vec2(72.0, 22.0), btn).clicked() && !active {
                     let mode = Mode::parse(&preset.mode).unwrap_or(status.mode);
-                    app.state.send(Command::Tune {
-                        frequency_hz: preset.frequency_khz * 1_000,
+                    app.state.select_preset(
+                        preset.frequency_khz * 1_000,
                         mode,
-                        bandwidth_hz: preset.bandwidth() as f32,
-                    });
+                        preset.bandwidth() as f32,
+                    );
                 }
             }
+        }
+
+        // Bouton de recalage rapide vers la fréquence initiale de la station sélectionnée.
+        if let Some(initial_hz) = app.state.session.as_ref().map(|s| s.initial_frequency_hz) {
+            let decale = status.frequency_hz != initial_hz;
+            ui.with_layout(Layout::right_to_left(Align::Center), |ui| {
+                let label = format!("Recaler ({} kHz)", format::khz(initial_hz / 1_000));
+                let btn = egui::Button::new(
+                    RichText::new(label)
+                        .size(11.0)
+                        .color(if decale {
+                            theme::BACKGROUND.egui()
+                        } else {
+                            theme::MUTED.egui()
+                        }),
+                )
+                .fill(if decale {
+                    theme::ACCENT.egui()
+                } else {
+                    theme::BACKGROUND.egui()
+                });
+                let resp = ui
+                    .add_sized(vec2(0.0, 22.0), btn)
+                    .on_hover_text("Revenir à la fréquence initiale de la station (touche 0 ou Début)");
+                if resp.clicked() && decale {
+                    app.state.reset_station_frequency();
+                }
+            });
         }
     });
 
@@ -392,12 +420,12 @@ fn nudge_freq(app: &mut super::App, status: &crate::engine::Status, delta_hz: i6
 }
 
 /// Raccourcis clavier de l'écran Écoute : ←/→ accord fin (Shift = ±1 kHz),
-/// R enregistrement, M décodeur Morse, Espace muet.
+/// 0/Début recalage sur la station, R enregistrement, M décodeur Morse, Espace muet.
 fn raccourcis_clavier(app: &mut super::App, ui: &egui::Ui, status: &crate::engine::Status) {
     if ui.ctx().egui_wants_keyboard_input() {
         return;
     }
-    let (left, right, shift, key_r, key_m, space) = ui.input(|i| {
+    let (left, right, shift, key_r, key_m, space, reset) = ui.input(|i| {
         (
             i.key_pressed(egui::Key::ArrowLeft),
             i.key_pressed(egui::Key::ArrowRight),
@@ -405,6 +433,7 @@ fn raccourcis_clavier(app: &mut super::App, ui: &egui::Ui, status: &crate::engin
             i.key_pressed(egui::Key::R),
             i.key_pressed(egui::Key::M),
             i.key_pressed(egui::Key::Space),
+            i.key_pressed(egui::Key::Num0) || i.key_pressed(egui::Key::Home),
         )
     });
     let step = if shift { 1_000 } else { 100 };
@@ -413,6 +442,9 @@ fn raccourcis_clavier(app: &mut super::App, ui: &egui::Ui, status: &crate::engin
     }
     if right {
         nudge_freq(app, status, step);
+    }
+    if reset {
+        app.state.reset_station_frequency();
     }
     if key_r {
         app.state.toggle_recording();

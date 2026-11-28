@@ -61,6 +61,9 @@ pub struct Row {
 pub struct Session {
     pub station: String,
     pub entry: Entry,
+    /// Fréquence initiale de la station (ou du préréglage choisi), en Hz.
+    /// Sert au bouton de recalage après un déplacement sur la cascade.
+    pub initial_frequency_hz: u32,
 }
 
 pub struct AppState {
@@ -217,11 +220,45 @@ impl AppState {
         self.session = Some(Session {
             station: station_id.to_string(),
             entry,
+            initial_frequency_hz: frequency_khz * 1_000,
         });
         self.settings.last_station = Some(station_id.to_string());
         let _ = self.settings.save();
         self.message = format!("{display} — {frequency_khz} kHz {}", mode.label());
         Ok(())
+    }
+
+    /// Bascule sur un préréglage secondaire de la station en cours et met à jour
+    /// la fréquence de référence pour le recalage.
+    pub fn select_preset(&mut self, frequency_hz: u32, mode: Mode, bandwidth_hz: f32) {
+        if let Some(session) = &mut self.session {
+            session.initial_frequency_hz = frequency_hz;
+        }
+        self.send(Command::Tune {
+            frequency_hz,
+            mode,
+            bandwidth_hz,
+        });
+    }
+
+    /// Revient à la fréquence initiale de la station en cours d'écoute, sans
+    /// perdre le mode ni la largeur de filtre actuels.
+    pub fn reset_station_frequency(&mut self) -> bool {
+        let (Some(session), Some(status)) = (&self.session, self.status()) else {
+            return false;
+        };
+        let freq = session.initial_frequency_hz;
+        let station = session.station.clone();
+        self.send(Command::Tune {
+            frequency_hz: freq,
+            mode: status.mode,
+            bandwidth_hz: status.bandwidth_hz,
+        });
+        self.message = format!(
+            "recalé sur {station} — {} kHz",
+            crate::format::khz(freq / 1_000),
+        );
+        true
     }
 
     /// Accord libre, hors catalogue.
@@ -931,6 +968,43 @@ mod tests {
         // Après la durée prévue : l'enregistrement s'arrête et la tâche est retirée.
         state.check_schedule(start + TimeDelta::minutes(11));
         assert!(state.scheduled.is_empty());
+        state.stop();
+    }
+
+    #[test]
+    fn le_recalage_ramene_a_la_frequence_initiale_de_la_station() {
+        let (mut state, _verrou) = etat("recalage");
+        state.listen("S28").unwrap();
+        let initial_hz = state
+            .session
+            .as_ref()
+            .expect("session ouverte")
+            .initial_frequency_hz;
+        assert_eq!(initial_hz, 4_625_000);
+
+        // On déplace la fréquence (comme un clic sur la cascade ou ±1 kHz).
+        state.send(Command::Tune {
+            frequency_hz: 4_700_000,
+            mode: Mode::Usb,
+            bandwidth_hz: 2_700.0,
+        });
+        for _ in 0..50 {
+            if state.status().map(|s| s.frequency_hz) == Some(4_700_000) {
+                break;
+            }
+            std::thread::sleep(std::time::Duration::from_millis(20));
+        }
+        assert_eq!(state.status().map(|s| s.frequency_hz), Some(4_700_000));
+
+        // Le recalage ramène exactement sur la fréquence initiale de la station.
+        assert!(state.reset_station_frequency());
+        for _ in 0..50 {
+            if state.status().map(|s| s.frequency_hz) == Some(initial_hz) {
+                break;
+            }
+            std::thread::sleep(std::time::Duration::from_millis(20));
+        }
+        assert_eq!(state.status().map(|s| s.frequency_hz), Some(initial_hz));
         state.stop();
     }
 }
