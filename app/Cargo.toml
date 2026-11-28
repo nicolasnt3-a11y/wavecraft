@@ -1,6 +1,6 @@
 [package]
 name = "wavecraft"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2024"
 description = "Récepteur RTL-SDR dédié aux stations de nombres"
 license = "GPL-3.0-or-later"
