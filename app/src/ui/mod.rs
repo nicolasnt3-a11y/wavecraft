@@ -143,6 +143,11 @@ pub struct App {
     volume_avant_coupure: f32,
     /// Campagne de captures en cours, le cas échéant.
     captures: Option<captures::Captures>,
+    /// Mise à jour disponible détectée sur GitHub.
+    pub update_available: Option<crate::updater::ReleaseInfo>,
+    update_check: Option<std::sync::mpsc::Receiver<Result<Option<crate::updater::ReleaseInfo>, String>>>,
+    update_install: Option<std::sync::mpsc::Receiver<Result<(), String>>>,
+    update_manual: bool,
 }
 
 impl App {
@@ -155,7 +160,7 @@ impl App {
         // accessible depuis les réglages.
         let assistant = (state.settings.first_run && !demo).then(assistant::Assistant::new);
         let captures = captures.map(captures::Captures::new);
-        Ok(Self {
+        let mut app = Self {
             page: if assistant.is_some() {
                 Page::Reglages
             } else {
@@ -178,7 +183,164 @@ impl App {
             pilote: None,
             volume_avant_coupure: 0.7,
             captures,
-        })
+            update_available: None,
+            update_check: None,
+            update_install: None,
+            update_manual: false,
+        };
+        if app.state.settings.app_updates && app.captures.is_none() {
+            app.check_updates(false);
+        }
+        Ok(app)
+    }
+
+    /// Vérifie sur GitHub si une version plus récente est publiée.
+    pub fn check_updates(&mut self, manual: bool) {
+        if self.update_check.is_some() || self.update_install.is_some() {
+            return;
+        }
+        self.update_manual = manual;
+        if manual {
+            self.state.message = "vérification des mises à jour sur GitHub…".into();
+        }
+        let (tx, rx) = std::sync::mpsc::channel();
+        std::thread::spawn(move || {
+            let _ = tx.send(crate::updater::check_latest().map_err(|e| format!("{e:#}")));
+        });
+        self.update_check = Some(rx);
+    }
+
+    /// Lance le téléchargement et l'installation de la mise à jour disponible.
+    pub fn install_update(&mut self) {
+        if self.update_install.is_some() {
+            return;
+        }
+        let Some(release) = self.update_available.clone() else {
+            return;
+        };
+        self.state.message = format!("téléchargement de Wavecraft {}…", release.tag);
+        let (tx, rx) = std::sync::mpsc::channel();
+        std::thread::spawn(move || {
+            let _ = tx.send(crate::updater::download_and_install(&release).map_err(|e| format!("{e:#}")));
+        });
+        self.update_install = Some(rx);
+    }
+
+    pub fn update_checking(&self) -> bool {
+        self.update_check.is_some()
+    }
+
+    pub fn update_installing(&self) -> bool {
+        self.update_install.is_some()
+    }
+
+    fn suivre_mise_a_jour(&mut self, ui: &egui::Ui) {
+        if let Some(rx) = &self.update_check {
+            match rx.try_recv() {
+                Ok(Ok(Some(release))) => {
+                    self.update_check = None;
+                    self.state.message = format!("nouvelle version disponible : {}", release.tag);
+                    self.update_available = Some(release);
+                }
+                Ok(Ok(None)) => {
+                    self.update_check = None;
+                    if self.update_manual {
+                        self.state.message = format!(
+                            "Wavecraft {} est déjà à jour",
+                            crate::updater::CURRENT_VERSION
+                        );
+                    }
+                }
+                Ok(Err(err)) => {
+                    self.update_check = None;
+                    if self.update_manual {
+                        self.error = Some(format!("mise à jour : {err}"));
+                    }
+                }
+                Err(std::sync::mpsc::TryRecvError::Empty) => {}
+                Err(std::sync::mpsc::TryRecvError::Disconnected) => self.update_check = None,
+            }
+        }
+
+        if let Some(rx) = &self.update_install {
+            match rx.try_recv() {
+                Ok(Ok(())) => {
+                    self.update_install = None;
+                    self.state.stop();
+                    ui.ctx().send_viewport_cmd(egui::ViewportCommand::Close);
+                }
+                Ok(Err(err)) => {
+                    self.update_install = None;
+                    self.error = Some(format!("installation de la mise à jour : {err}"));
+                }
+                Err(std::sync::mpsc::TryRecvError::Empty) => {}
+                Err(std::sync::mpsc::TryRecvError::Disconnected) => self.update_install = None,
+            }
+        }
+    }
+
+    fn update_banner(&mut self, ui: &mut egui::Ui) {
+        if self.captures.is_some() {
+            return;
+        }
+        let Some(release) = self.update_available.clone() else {
+            return;
+        };
+        let installing = self.update_installing();
+        egui::Panel::top("bandeau-maj")
+            .exact_size(40.0)
+            .resizable(false)
+            .show_separator_line(false)
+            .frame(
+                egui::Frame::NONE
+                    .fill(theme::SURFACE.egui())
+                    .stroke(egui::Stroke::new(1.0, theme::BORDER.egui()))
+                    .inner_margin(egui::Margin::symmetric(20, 0)),
+            )
+            .show(ui, |ui| {
+                ui.horizontal_centered(|ui| {
+                    ui.label(
+                        egui::RichText::new(format!(
+                            "● Nouvelle version disponible : Wavecraft {} (actuelle : {})",
+                            release.tag,
+                            crate::updater::CURRENT_VERSION
+                        ))
+                        .size(12.0)
+                        .color(theme::ACCENT.egui()),
+                    );
+
+                    ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
+                        if !installing {
+                            if ui.button("Plus tard").clicked() {
+                                self.update_available = None;
+                            }
+                            if !release.page_url.is_empty() {
+                                ui.hyperlink_to("Notes", &release.page_url);
+                            }
+                            if release.download_url.is_some()
+                                && ui
+                                    .add(
+                                        egui::Button::new(
+                                            egui::RichText::new("INSTALLER ET REDÉMARRER")
+                                                .size(11.0)
+                                                .color(theme::BACKGROUND.egui()),
+                                        )
+                                        .fill(theme::ACCENT.egui()),
+                                    )
+                                    .clicked()
+                            {
+                                self.install_update();
+                            }
+                        } else {
+                            ui.label(
+                                egui::RichText::new("Téléchargement et installation en cours…")
+                                    .size(12.0)
+                                    .color(theme::TEXT_SOFT.egui()),
+                            );
+                        }
+                    });
+                });
+            });
     }
 
     /// Ouvre la sortie audio, ou la referme si le moteur est arrêté.
@@ -563,6 +725,7 @@ impl eframe::App for App {
         }
         self.sync_audio();
         self.suivre_pilote();
+        self.suivre_mise_a_jour(ui);
 
         // Quand le serveur web tourne, il voit le même état que la fenêtre et
         // ses demandes sont appliquées ici, dans le fil propriétaire.
@@ -575,6 +738,7 @@ impl eframe::App for App {
         self.captures(ui);
 
         self.header(ui);
+        self.update_banner(ui);
         self.rail(ui);
         self.footer(ui);
 

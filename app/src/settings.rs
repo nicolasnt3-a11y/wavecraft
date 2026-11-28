@@ -83,6 +83,8 @@ pub struct Settings {
     pub server_password: String,
     /// Position de l'auditeur, utilisée pour indiquer comment orienter l'antenne.
     pub position: Option<crate::antenna::Position>,
+    /// Vérifier les nouvelles versions de Wavecraft sur GitHub au démarrage.
+    pub app_updates: bool,
 }
 
 impl Default for Settings {
@@ -109,6 +111,7 @@ impl Default for Settings {
             server_port: 8073,
             server_password: String::new(),
             position: None,
+            app_updates: true,
         }
     }
 }

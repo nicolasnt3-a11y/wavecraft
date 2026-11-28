@@ -29,6 +29,7 @@ mod state;
 mod theme;
 #[cfg(feature = "desktop")]
 mod ui;
+mod updater;
 
 use anyhow::Result;
 use chrono::{TimeDelta, Utc};

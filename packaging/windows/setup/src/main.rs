@@ -94,7 +94,7 @@ $scMenu.Save()
 $reg = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Wavecraft"
 if (-not (Test-Path $reg)) {{ New-Item -Path $reg -Force | Out-Null }}
 Set-ItemProperty -Path $reg -Name "DisplayName" -Value "Wavecraft"
-Set-ItemProperty -Path $reg -Name "DisplayVersion" -Value "0.1.0"
+Set-ItemProperty -Path $reg -Name "DisplayVersion" -Value "{version}"
 Set-ItemProperty -Path $reg -Name "Publisher" -Value "Nicolas"
 Set-ItemProperty -Path $reg -Name "DisplayIcon" -Value "$dest\wavecraft.ico"
 Set-ItemProperty -Path $reg -Name "InstallLocation" -Value "$dest"
@@ -121,6 +121,7 @@ pause
 "#,
         dest = dest.to_string_lossy().replace('\'', "''"),
         tempZip = temp_zip.to_string_lossy().replace('\'', "''"),
+        version = env!("CARGO_PKG_VERSION"),
     );
 
     let status = Command::new("powershell")

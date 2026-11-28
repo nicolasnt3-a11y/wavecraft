@@ -378,9 +378,24 @@ fn a_propos(app: &mut super::App, ui: &mut egui::Ui) {
             .color(theme::MUTED.egui()),
         );
         ui.add_space(8.0);
+        let mut maj_app = app.state.settings.app_updates;
+        if ui
+            .checkbox(&mut maj_app, "Vérifier les mises à jour de Wavecraft au démarrage")
+            .changed()
+        {
+            app.state.settings.app_updates = maj_app;
+            let _ = app.state.settings.save();
+        }
+        ui.add_space(6.0);
         ui.horizontal(|ui| {
             ui.hyperlink_to("Mode d'emploi", "https://nthill.be/wavecraft/guide/");
             ui.hyperlink_to("Code source", "https://github.com/nicolasnt3-a11y/wavecraft");
+            if !app.update_checking()
+                && !app.update_installing()
+                && style::bouton(ui, "Vérifier les mises à jour", false).clicked()
+            {
+                app.check_updates(true);
+            }
             if style::bouton(ui, "Relancer l'assistant", false).clicked() {
                 app.assistant = Some(super::assistant::Assistant::new());
             }
